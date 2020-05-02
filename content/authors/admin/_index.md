@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Nelson Bighetti
+title: Thomas Robinson
 
 # Username (this should match the folder name)
 authors:
@@ -10,32 +10,34 @@ authors:
 superuser: true
 
 # Role/position
-role: Professor of Artificial Intelligence
+role: DPhil Student
 
 # Organizations/Affiliations
 organizations:
-- name: Stanford University
-  url: ""
+- name: Department of Politics, University of Oxford
+  url: "https://www.politics.ox.ac.uk/"
+- name: Centre for Experimental Social Sciences, Nuffield College
+  url: "https://cess-nuffield.nuff.ox.ac.uk/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: I am a political scientist studying representation, experimental methods and computational social science.
 
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Representation
+- Experiments
+- Computational social science
 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  - course: DPhil in Politics
+    institution: University of Oxford
+    year: 2018-
+  - course: MPhil in Politics
+    institution: University of Oxford
+    year: 2018
+  - course: BA in Philosophy, Politics, and Economics
+    institution: University of Oxford
+    year: 2016
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -44,16 +46,19 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: '#contact'  # For a direct email link, use "mailto:test@example.org".
+  link: '#contact'  # For a direct email link, use "mailto:thomas.robinson@politics.ox.ac.uk".
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
+  link: https://twitter.com/nosnibor_mot
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://scholar.google.co.uk/citations?user=bxgsaIAAAAAJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/tsrobinson
+- icon: orcid
+  icon_pack: ai
+  link: https://orcid.org/0000-0001-7097-1599
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -65,11 +70,11 @@ email: ""
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
-user_groups:
-- Researchers
-- Visitors
+# user_groups:
+# - Researchers
+# - Visitors
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I am a doctoral student in politics at the [University of Oxford](http://www.ox.ac.uk). My research interests surround representation, direct democracy and campaign finance, as well as issues within experimental methodology and computational social science.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+I am supervised by [Professor Andy Eggers](http://andy.egge.rs/), Nuffield College, and hold a joint ESRC-Wadham RCUK studentship. I am also a Quantitative Methods scholar at the [Department of Politics and International Relations](https://www.politics.ox.ac.uk/) at the University of Oxford, and am affiliated with the [Centre for Experimental Social Science (CESS)](https://cess-nuffield.nuff.ox.ac.uk/) at Nuffield College, where I am currently the Online Experiments Manager.
