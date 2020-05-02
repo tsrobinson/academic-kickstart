@@ -22,7 +22,7 @@ font = ""
 
 # Choose a font size.
 # Sizes: XS (extra small), S (small), M (medium), L (large - DEFAULT), XL (extra large)
-font_size = "XS"
+font_size = "S"
 
 ############################
 ## Basic Info
@@ -106,8 +106,8 @@ appointment_url = ""
 # Contact links
 #   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.
 contact_links = [
-  {icon = "twitter", icon_pack = "fab", name = "DM Me", link = "https://twitter.com/nosnibor_mot"},
-  {icon = "skype", icon_pack = "fab", name = "Skype Me", link = "skype:robinsont94?call"},
+  # {icon = "twitter", icon_pack = "fab", name = "Twitter", link = "https://twitter.com/nosnibor_mot"},
+  {icon = "skype", icon_pack = "fab", name = "Skype", link = "skype:robinsont94?call"},
   # {icon = "keybase", icon_pack = "fab", name = "Chat on Keybase", link = "https://keybase.io/"},
   # {icon = "comments", icon_pack = "fas", name = "Discuss on Forum", link = "https://discourse.gohugo.io"},
   # # {icon = "telegram", icon_pack = "fab", name = "Telegram Me", link = "https://telegram.me/@Telegram"},
@@ -276,4 +276,4 @@ plugins_js  = []
 ############################
 [cms]
   # See https://sourcethemes.com/academic/docs/install/#install-with-web-browser
-  netlify_cms = true
+  netlify_cms = false
