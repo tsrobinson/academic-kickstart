@@ -80,4 +80,4 @@ I am a doctoral student in politics at the [University of Oxford](http://www.ox.
 
 I am supervised by [Professor Andy Eggers](http://andy.egge.rs/), Nuffield College, and hold a joint ESRC-Wadham RCUK studentship. I am also a Quantitative Methods scholar at the [Department of Politics and International Relations](https://www.politics.ox.ac.uk/) at the University of Oxford, and am affiliated with the [Centre for Experimental Social Science (CESS)](https://cess-nuffield.nuff.ox.ac.uk/) at Nuffield College, where I am currently the Online Experiments Manager.
 
-From August 2020, I will be an Assistant Professor in Quantitative Comparative Politics at the [School for Government and International Affairs](https://www.dur.ac.uk/sgia/), University of Durham.
+From August 2020, I will be an Assistant Professor in Quantitative Comparative Politics at the [School of Government and International Affairs](https://www.dur.ac.uk/sgia/), University of Durham.
