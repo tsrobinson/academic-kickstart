@@ -1,5 +1,5 @@
 ---
-title: "Missing Values in Large and Complex Data"
+title: "Applying the MIDAS Touch: How to Handle Missing Values in Large and Complex Data"
 date: 2020-04-14
 publishDate: 2020-05-02T20:36:30.580303Z
 authors: ["Ranjit Lall", "Thomas Robinson"]
@@ -10,4 +10,3 @@ publication: "*Under Review*"
 doi: "10.33774/apsa-2020-3tk40-v3"
 url_preprint: https://preprints.apsanet.org/engage/apsa/article-details/5e86309dc1eefd001adeb780
 ---
-
