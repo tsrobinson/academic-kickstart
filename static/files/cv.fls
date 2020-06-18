@@ -30,8 +30,6 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/changepage/changepage.sty
-INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/changepage/changepage.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
