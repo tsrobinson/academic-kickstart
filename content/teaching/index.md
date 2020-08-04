@@ -1,6 +1,6 @@
 ---
 title: Teaching
-summary: Recent courses taught
+summary: Recent courses
 date: "2020-05-02T00:00:00Z"
 
 reading_time: false  # Show estimated reading time?
@@ -13,17 +13,9 @@ header:
   caption: ""
   image: ""
 ---
-## Undergraduate
 
-* [QStep I](https://www.oqc.ox.ac.uk) -- Quantitative lab sessions in foundational statistics and linear regression
-
-* Practice of Politics -- First-year introductory paper in comparative politics
-
-* Comparative Government (201) -- Finals paper in comparative politics
-
-## Graduate
-
-* Introduction to Statistics -- mandatory statistics course for first-year Masters and DPhil students
+## Academic Year (2020-21)
+In the upcoming academic year, I will be teaching undergraduate and postgraduate courses in research design, methodology, and statistics.
 
 ## Methods Schools
 
@@ -32,3 +24,15 @@ header:
 * [Machine learning and heterogeneity](https://cess-nuffield.nuff.ox.ac.uk/2019-cess-essex-summer-school/) -- Workshop, taught at CESS/Essex Summer School 2019
 
 * Introduction to R -- Programming with R for the design and analysis of experimental data, taught at CESS/Essex Summer School 2019
+
+
+## Previous Teaching
+
+* [QStep I](https://www.oqc.ox.ac.uk) -- Quantitative lab sessions in foundational statistics and linear regression (*undergraduate*)
+
+* Practice of Politics -- First-year introductory paper in comparative politics (*undergraduate*)
+
+* Comparative Government -- Finals paper in comparative politics (*undergraduate*)
+
+* Introduction to Statistics -- mandatory statistics course for first-year Masters and DPhil students (*postgraduate*)
+

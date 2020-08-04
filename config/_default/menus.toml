@@ -21,6 +21,11 @@
   weight = 30
 
 [[main]]
+  name = "Software & Resources"
+  url = "#slider"
+  weight = 35
+
+[[main]]
   name = "Posts"
   url = "/post/"
   weight = 40

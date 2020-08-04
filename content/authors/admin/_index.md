@@ -10,20 +10,22 @@ authors:
 superuser: true
 
 # Role/position
-role: DPhil Student
+role: Assistant Professor in Quantitative Comparative Politics
 
 # Organizations/Affiliations
 organizations:
-- name: Department of Politics, University of Oxford
-  url: "https://www.politics.ox.ac.uk/"
-- name: Centre for Experimental Social Sciences, Nuffield College
+- name: School of Governance and International Affairs, Durham University
+  url: "https://www.dur.ac.uk/sgia/"
+# - name: Department of Politics, University of Oxford
+#  url: "https://www.politics.ox.ac.uk/"
+- name: Centre for Experimental Social Sciences, Nuffield College, University of Oxford
   url: "https://cess-nuffield.nuff.ox.ac.uk/"
 
 # Short bio (displayed in user profile at end of posts)
 bio: I am a political scientist studying representation, experimental methods and computational social science.
 
 interests:
-- Representation
+- Representation, Policymaking, Campaign Finance
 - Experiments
 - Computational social science
 
@@ -31,7 +33,7 @@ education:
   courses:
   - course: DPhil in Politics
     institution: University of Oxford
-    year: 2018-
+    year: 2020
   - course: MPhil in Politics
     institution: University of Oxford
     year: 2018
@@ -46,7 +48,7 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: '#contact'  # For a direct email link, use "mailto:thomas.robinson@politics.ox.ac.uk".
+  link: '#contact'  # For a direct email link, use "mailto:thomas.robinson@durham.ac.uk".
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/nosnibor_mot
@@ -76,8 +78,11 @@ email: ""
 # - Visitors
 ---
 
-I am a doctoral student in politics at the [University of Oxford](http://www.ox.ac.uk). My research interests surround representation, direct democracy and campaign finance, as well as issues within experimental methodology and computational social science.
+I am an Assistant Professor in Quantitative Comparative Politics at the [School of Government and International Affairs](https://www.dur.ac.uk/sgia/), Durham University. I am also affiliated with the [Centre for Experimental Social Science (CESS)](https://cess-nuffield.nuff.ox.ac.uk/) at Nuffield College, University of Oxford.
 
-I am supervised by [Professor Andy Eggers](http://andy.egge.rs/), Nuffield College, and hold a joint ESRC-Wadham RCUK studentship. I am also a Quantitative Methods scholar at the [Department of Politics and International Relations](https://www.politics.ox.ac.uk/) at the University of Oxford, and am affiliated with the [Centre for Experimental Social Science (CESS)](https://cess-nuffield.nuff.ox.ac.uk/) at Nuffield College, where I am currently the Online Experiments Manager.
+My research interests surround representation, direct democracy and campaign finance, as well as issues within experimental methodology and computational social science.
 
-From August 2020, I will be an Assistant Professor in Quantitative Comparative Politics at the [School of Government and International Affairs](https://www.dur.ac.uk/sgia/), University of Durham.
+I successfully defended my DPhil in politics at the [University of Oxford](http://www.ox.ac.uk) in July 2020. During my graduate studies I held a joint ESRC-Wadham RCUK studentship, and was a Quantitative Methods scholar at the [Department of Politics and International Relations](https://www.politics.ox.ac.uk/) at the University of Oxford.
+
+
+
