@@ -82,7 +82,7 @@ I am an Assistant Professor in Quantitative Comparative Politics at the [School 
 
 My research interests surround representation, direct democracy and campaign finance, as well as issues within experimental methodology and computational social science.
 
-I successfully defended my DPhil in politics at the [University of Oxford](http://www.ox.ac.uk) in July 2020. During my graduate studies I held a joint ESRC-Wadham RCUK studentship, and was a Quantitative Methods scholar at the [Department of Politics and International Relations](https://www.politics.ox.ac.uk/) at the University of Oxford.
+I successfully defended my DPhil in Politics at the [University of Oxford](http://www.ox.ac.uk) in July 2020. During my graduate studies I held a joint ESRC-Wadham RCUK studentship, and was a Quantitative Methods scholar at the [Department of Politics and International Relations](https://www.politics.ox.ac.uk/), University of Oxford.
 
 
 
