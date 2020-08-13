@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Big Op and little op | 10 Fundamental Theorems for Econometrics</title>
+  <meta name="description" content="This book walks through the ten most important statistical theorems as highlighted by Jeffrey Wooldridge, presenting intuiitions, proofs, and applications." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Big Op and little op | 10 Fundamental Theorems for Econometrics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book walks through the ten most important statistical theorems as highlighted by Jeffrey Wooldridge, presenting intuiitions, proofs, and applications." />
+  <meta name="github-repo" content="tsrobinson/10EconTheorems" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Big Op and little op | 10 Fundamental Theorems for Econometrics" />
+  
+  <meta name="twitter:description" content="This book walks through the ten most important statistical theorems as highlighted by Jeffrey Wooldridge, presenting intuiitions, proofs, and applications." />
+  
+
+<meta name="author" content="Thomas S. Robinson  (https://ts-robinson.com)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="slutsky.html"/>
+<link rel="next" href="dm.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">10 Fundamental Theorems for Econometrics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#version-notes"><i class="fa fa-check"></i>Version notes</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="exp-theorems.html"><a href="exp-theorems.html"><i class="fa fa-check"></i><b>1</b> Expectation Theorems</a><ul>
+<li class="chapter" data-level="1.1" data-path="exp-theorems.html"><a href="exp-theorems.html#law-of-iterated-expectations"><i class="fa fa-check"></i><b>1.1</b> Law of Iterated Expectations</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-lie"><i class="fa fa-check"></i><b>1.1.1</b> Proof of LIE</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="exp-theorems.html"><a href="exp-theorems.html#law-of-total-variance"><i class="fa fa-check"></i><b>1.2</b> Law of Total Variance</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-ltv"><i class="fa fa-check"></i><b>1.2.1</b> Proof of LTV</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="exp-theorems.html"><a href="exp-theorems.html#linearity-of-expectations"><i class="fa fa-check"></i><b>1.3</b> Linearity of Expectations</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-loe"><i class="fa fa-check"></i><b>1.3.1</b> Proof of LOE</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="exp-theorems.html"><a href="exp-theorems.html#variance-of-a-sum"><i class="fa fa-check"></i><b>1.4</b> Variance of a Sum</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-vos-x-y-are-independent"><i class="fa fa-check"></i><b>1.4.1</b> Proof of VoS: <span class="math inline">\(X, Y\)</span> are independent</a></li>
+<li class="chapter" data-level="1.4.2" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-vos-x-y-are-dependent"><i class="fa fa-check"></i><b>1.4.2</b> Proof of VoS: <span class="math inline">\(X, Y\)</span> are dependent</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exp-ineq.html"><a href="exp-ineq.html"><i class="fa fa-check"></i><b>2</b> Inequalities involving expectations</a><ul>
+<li class="chapter" data-level="2.1" data-path="exp-ineq.html"><a href="exp-ineq.html#jensens-inequality"><i class="fa fa-check"></i><b>2.1</b> Jensen’s Inequality</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="exp-ineq.html"><a href="exp-ineq.html#convex-functions"><i class="fa fa-check"></i><b>2.1.1</b> Convex functions</a></li>
+<li class="chapter" data-level="2.1.2" data-path="exp-ineq.html"><a href="exp-ineq.html#the-inequality"><i class="fa fa-check"></i><b>2.1.2</b> The Inequality</a></li>
+<li class="chapter" data-level="2.1.3" data-path="exp-ineq.html"><a href="exp-ineq.html#proof_ji"><i class="fa fa-check"></i><b>2.1.3</b> Proof</a></li>
+<li class="chapter" data-level="2.1.4" data-path="exp-ineq.html"><a href="exp-ineq.html#application"><i class="fa fa-check"></i><b>2.1.4</b> Application</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="exp-ineq.html"><a href="exp-ineq.html#chebyshevs-inequality"><i class="fa fa-check"></i><b>2.2</b> Chebyshev’s Inequality</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="exp-ineq.html"><a href="exp-ineq.html#proof"><i class="fa fa-check"></i><b>2.2.1</b> Proof</a></li>
+<li class="chapter" data-level="2.2.2" data-path="exp-ineq.html"><a href="exp-ineq.html#applications"><i class="fa fa-check"></i><b>2.2.2</b> Applications</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="linear-projection.html"><a href="linear-projection.html"><i class="fa fa-check"></i><b>3</b> Linear Projection</a><ul>
+<li class="chapter" data-level="3.1" data-path="linear-projection.html"><a href="linear-projection.html#proj_def"><i class="fa fa-check"></i><b>3.1</b> Projection</a></li>
+<li class="chapter" data-level="3.2" data-path="linear-projection.html"><a href="linear-projection.html#proj_prop"><i class="fa fa-check"></i><b>3.2</b> Properties of the projection matrix</a></li>
+<li class="chapter" data-level="3.3" data-path="linear-projection.html"><a href="linear-projection.html#lp_lr"><i class="fa fa-check"></i><b>3.3</b> Linear regression</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="linear-projection.html"><a href="linear-projection.html#geometric-interpretation"><i class="fa fa-check"></i><b>3.3.1</b> Geometric interpretation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wlln.html"><a href="wlln.html"><i class="fa fa-check"></i><b>4</b> Weak Law of Large Numbers and Central Limit Theorem</a><ul>
+<li class="chapter" data-level="4.1" data-path="wlln.html"><a href="wlln.html#weak-law-of-large-numbers"><i class="fa fa-check"></i><b>4.1</b> Weak Law of Large Numbers</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="wlln.html"><a href="wlln.html#theorem-in-plain-english"><i class="fa fa-check"></i><b>4.1.1</b> Theorem in Plain English</a></li>
+<li class="chapter" data-level="4.1.2" data-path="wlln.html"><a href="wlln.html#proof_wlln"><i class="fa fa-check"></i><b>4.1.2</b> Proof</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="wlln.html"><a href="wlln.html#clt"><i class="fa fa-check"></i><b>4.2</b> Central Limit Theorem</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="wlln.html"><a href="wlln.html#theorem-in-plain-english-1"><i class="fa fa-check"></i><b>4.2.1</b> Theorem in Plain English</a></li>
+<li class="chapter" data-level="4.2.2" data-path="wlln.html"><a href="wlln.html#primer-characteristic-functions"><i class="fa fa-check"></i><b>4.2.2</b> Primer: Characteristic Functions</a></li>
+<li class="chapter" data-level="4.2.3" data-path="wlln.html"><a href="wlln.html#proof-of-clt"><i class="fa fa-check"></i><b>4.2.3</b> Proof of CLT</a></li>
+<li class="chapter" data-level="4.2.4" data-path="wlln.html"><a href="wlln.html#generalising-clt"><i class="fa fa-check"></i><b>4.2.4</b> Generalising CLT</a></li>
+<li class="chapter" data-level="4.2.5" data-path="wlln.html"><a href="wlln.html#limitation-of-clt-and-the-importance-of-wlln"><i class="fa fa-check"></i><b>4.2.5</b> Limitation of CLT (and the importance of WLLN)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="slutsky.html"><a href="slutsky.html"><i class="fa fa-check"></i><b>5</b> Slutsky’s Theorem</a><ul>
+<li class="chapter" data-level="5.1" data-path="slutsky.html"><a href="slutsky.html#theorem_slutsky"><i class="fa fa-check"></i><b>5.1</b> Theorem in plain English</a></li>
+<li class="chapter" data-level="5.2" data-path="slutsky.html"><a href="slutsky.html#coded-demonstration"><i class="fa fa-check"></i><b>5.2</b> Coded demonstration</a></li>
+<li class="chapter" data-level="5.3" data-path="slutsky.html"><a href="slutsky.html#proof-of-slutskys-theorem"><i class="fa fa-check"></i><b>5.3</b> Proof of Slutsky’s Theorem</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="slutsky.html"><a href="slutsky.html#cmt"><i class="fa fa-check"></i><b>5.3.1</b> CMT</a></li>
+<li class="chapter" data-level="5.3.2" data-path="slutsky.html"><a href="slutsky.html#proof-using-cmt"><i class="fa fa-check"></i><b>5.3.2</b> Proof using CMT</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="slutsky.html"><a href="slutsky.html#applications_slutsky"><i class="fa fa-check"></i><b>5.4</b> Applications</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="slutsky.html"><a href="slutsky.html#proving-the-consistency-of-sample-variance-and-the-normality-of-the-t-statistic"><i class="fa fa-check"></i><b>5.4.1</b> Proving the consistency of sample variance, and the normality of the t-statistic</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html"><i class="fa fa-check"></i><b>6</b> Big Op and little op</a><ul>
+<li class="chapter" data-level="6.1" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#stochastic-order-notation"><i class="fa fa-check"></i><b>6.1</b> Stochastic order notation</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#relationship-of-big-o-and-little-o"><i class="fa fa-check"></i><b>6.1.1</b> Relationship of big-O and little-o</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#notational-shorthand-and-arithmetic-properties"><i class="fa fa-check"></i><b>6.2</b> Notational shorthand and ``arithmetic" properties</a></li>
+<li class="chapter" data-level="6.3" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#why-is-this-usefulfn_cite1"><i class="fa fa-check"></i><b>6.3</b> Why is this useful?</a></li>
+<li class="chapter" data-level="6.4" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#estimator_consistency"><i class="fa fa-check"></i><b>6.4</b> Worked Example: Consistency of mean estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="dm.html"><a href="dm.html"><i class="fa fa-check"></i><b>7</b> Delta Method</a><ul>
+<li class="chapter" data-level="7.1" data-path="dm.html"><a href="dm.html#delta-method-in-plain-english"><i class="fa fa-check"></i><b>7.1</b> Delta Method in Plain English</a></li>
+<li class="chapter" data-level="7.2" data-path="dm.html"><a href="dm.html#proof_dm"><i class="fa fa-check"></i><b>7.2</b> Proof</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="dm.html"><a href="dm.html#taylors-series-and-theorem"><i class="fa fa-check"></i><b>7.2.1</b> Taylor’s Series and Theorem</a></li>
+<li class="chapter" data-level="7.2.2" data-path="dm.html"><a href="dm.html#proof-of-delta-method"><i class="fa fa-check"></i><b>7.2.2</b> Proof of Delta Method</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="dm.html"><a href="dm.html#applied-example"><i class="fa fa-check"></i><b>7.3</b> Applied example</a></li>
+<li class="chapter" data-level="7.4" data-path="dm.html"><a href="dm.html#alternative-strategies"><i class="fa fa-check"></i><b>7.4</b> Alternative strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="frisch.html"><a href="frisch.html"><i class="fa fa-check"></i><b>8</b> Frisch-Waugh-Lovell Theorem</a><ul>
+<li class="chapter" data-level="8.1" data-path="wlln.html"><a href="wlln.html#theorem-in-plain-english"><i class="fa fa-check"></i><b>8.1</b> Theorem in plain English</a></li>
+<li class="chapter" data-level="8.2" data-path="frisch.html"><a href="frisch.html#proof_fw"><i class="fa fa-check"></i><b>8.2</b> Proof</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="frisch.html"><a href="frisch.html#primer-projection-matricessecnote"><i class="fa fa-check"></i><b>8.2.1</b> Primer: Projection matrices</a></li>
+<li class="chapter" data-level="8.2.2" data-path="frisch.html"><a href="frisch.html#fwl-proof-secnote2"><i class="fa fa-check"></i><b>8.2.2</b> FWL Proof</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="frisch.html"><a href="frisch.html#coded-example"><i class="fa fa-check"></i><b>8.3</b> Coded example</a></li>
+<li class="chapter" data-level="8.4" data-path="frisch.html"><a href="frisch.html#application-sensitivity-analysis"><i class="fa fa-check"></i><b>8.4</b> Application: Sensitivity analysis</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="frisch.html"><a href="frisch.html#regressing-the-partialled-out-x-on-the-full-y"><i class="fa fa-check"></i><b>8.4.1</b> Regressing the partialled-out X on the full Y</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="pd.html"><a href="pd.html"><i class="fa fa-check"></i><b>9</b> Positive Definite Matrices</a><ul>
+<li class="chapter" data-level="9.1" data-path="pd.html"><a href="pd.html#pd_terms"><i class="fa fa-check"></i><b>9.1</b> Terminology</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="pd.html"><a href="pd.html#positivity"><i class="fa fa-check"></i><b>9.1.1</b> Positivity</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="pd.html"><a href="pd.html#a-b-is-psd-iff-b-1---a-1-is-psd"><i class="fa fa-check"></i><b>9.2</b> <span class="math inline">\(A-B\)</span> is PSD iff <span class="math inline">\(B^{-1} - A^{-1}\)</span> is PSD</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="pd.html"><a href="pd.html#pd_proof"><i class="fa fa-check"></i><b>9.2.1</b> Proof</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="pd.html"><a href="pd.html#pd_app"><i class="fa fa-check"></i><b>9.3</b> Applications</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="pd.html"><a href="pd.html#ols-as-the-best-linear-unbiased-estimator-blue"><i class="fa fa-check"></i><b>9.3.1</b> OLS as the best linear unbiased estimator (BLUE)</a></li>
+<li class="chapter" data-level="9.3.2" data-path="pd.html"><a href="pd.html#optimisation-problems"><i class="fa fa-check"></i><b>9.3.2</b> Optimisation problems</a></li>
+<li class="chapter" data-level="9.3.3" data-path="pd.html"><a href="pd.html#recap"><i class="fa fa-check"></i><b>9.3.3</b> Recap</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">10 Fundamental Theorems for Econometrics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="big-op-and-little-op" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Big Op and little op</h1>
+<div id="stochastic-order-notation" class="section level2">
+<h2><span class="header-section-number">6.1</span> Stochastic order notation</h2>
+<p><strong>“Big Op”</strong> (<em>big oh-pee</em>), or in algebraic terms <span class="math inline">\(O_p\)</span>, is a shorthand means of characterising the convergence in probability of a set of random variables. It directly builds on the same sort of convergence ideas that were discussed in Chapters <a href="wlln.html#wlln">5</a> and <a href="slutsky.html#slutsky">6</a>.</p>
+<p>Big Op means that some given random variable is stochastically bounded. If we have some random variable <span class="math inline">\(X_n\)</span> and some constant <span class="math inline">\(a_n\)</span> (where n indexes both sets), then</p>
+<p><span class="math display">\[ X_n = O_p(a_n)\]</span> is the same as saying that <span class="math display">\[ P(|\frac{X_n}{a_n}| &gt; \delta) &lt; \epsilon, \forall n &gt; N. \]</span>
+<span class="math inline">\(M \text{ and } N\)</span> here are just finite numbers, and <span class="math inline">\(\epsilon\)</span> is some arbitrary (small) number. In plain English, <span class="math inline">\(O_p\)</span> means that for a large enough <span class="math inline">\(n\)</span> there is some number (<span class="math inline">\(M\)</span>) such that the probability that the random variable <span class="math inline">\(\frac{X_n}{a_n}\)</span> is larger than that number is essentially zero. It is “bounded in probability” <span class="citation">(Vaart <a href="#ref-vaart_1998" role="doc-biblioref">1998</a>, Section 2.2)</span>.</p>
+<p><strong>“Little op”</strong> (<em>litle oh-pee</em>), or <span class="math inline">\(o_p\)</span>, refers to convergence in probability towards zero. <span class="math inline">\(X_n = o_p(1)\)</span> is the same as saying</p>
+<p><span class="math display">\[ \lim_{n\to\infty} (P|X_n| \geq \epsilon) = 0, \forall\epsilon &gt; 0. \]</span></p>
+<p>By definition of the notation, if <span class="math inline">\(X_n = o_p(a_n)\)</span> then</p>
+<p><span class="math display">\[ \frac{x_n}{a_n} = o_p(1).\]</span></p>
+<p>In turn, we can therefore express <span class="math inline">\(X_n = o_p(a_n)\)</span> as</p>
+<p><span class="math display">\[ \lim_{n\to\infty} (P|\frac{X_n}{a_n}| \geq \epsilon) = 0, \forall\epsilon &gt; 0.\]</span>
+In other words, <span class="math inline">\(X_n = o_p(a_n)\)</span> if and only if <span class="math inline">\(\frac{X_n}{a_n} \xrightarrow{p} 0\)</span>.</p>
+<div id="relationship-of-big-o-and-little-o" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Relationship of big-O and little-o</h3>
+<p><span class="math inline">\(O_p\)</span> and <span class="math inline">\(o_p\)</span> may seem quite similar, and that’s because they are! Another way to express <span class="math inline">\(X_n = O_p(a_n)\)</span>, is</p>
+<p><span class="math display">\[\forall \epsilon\;\; \exists N_\epsilon,\delta_\epsilon \;\; s.t. \forall n &gt; N_\epsilon,\;\; P(|\frac{X_n}{a_n}| \geq \delta_\epsilon) \leq \epsilon.\]</span>
+This restatement makes it clear that the values of <span class="math inline">\(\delta\)</span> and <span class="math inline">\(N\)</span> are to be found with respect to <span class="math inline">\(\epsilon\)</span>. That is, we only have to find one value of <span class="math inline">\(N\)</span> and <span class="math inline">\(\delta\)</span> for each <span class="math inline">\(epsilon\)</span>, and these can differ across <span class="math inline">\(\epsilon\)</span>’s.</p>
+<p>Using the same notation, <span class="math inline">\(X_n = o_p(a_n)\)</span> can be expressed as</p>
+<p><span class="math display">\[\forall \epsilon,\delta\;\; \exists N_{\epsilon,\delta} \;\; s.t. \forall n &gt; N_{\epsilon,\delta},\;\; P(|\frac{X_n}{a_n}| \geq \delta) \leq \epsilon.\]</span>
+<span class="math inline">\(o_p\)</span> is therefore a more general statement, ranging over all values of <span class="math inline">\(\epsilon\)</span> <em>and</em> <span class="math inline">\(\delta\)</span>, and hence any combination of those two values. In other words, for any given pair of values for <span class="math inline">\(\epsilon\)</span> and <span class="math inline">\(\delta\)</span> there must be some <span class="math inline">\(N\)</span> that satisfies the above inequality (assuming <span class="math inline">\(X_n = o_p(a_n)\)</span>).</p>
+<p>Note also, therefore that <span class="math inline">\(o_p(a_n)\)</span> entails <span class="math inline">\(O_p(a_n)\)</span>, but that the inverse is not true. If for all <span class="math inline">\(\epsilon\)</span> and <span class="math inline">\(\delta\)</span> there is some <span class="math inline">\(N_{\epsilon,\delta}\)</span> that satisfies the inequality, then it must be the case that for all <span class="math inline">\(\epsilon\)</span> there exists some <span class="math inline">\(\delta\)</span> such that the inequality also holds. But just because for some <span class="math inline">\(\delta_\epsilon\)</span> the inequality holds, this does not mean that it will hold for <em>all</em> <span class="math inline">\(\delta\)</span>.</p>
+</div>
+</div>
+<div id="notational-shorthand-and-arithmetic-properties" class="section level2">
+<h2><span class="header-section-number">6.2</span> Notational shorthand and ``arithmetic" properties</h2>
+<p>Expressions like <span class="math inline">\(X_n = o_p\left(\frac{1}{\sqrt{n}}\right)\)</span> do not contain literal identities. Big and little o are merely shorthand ways of expressing how some random variable converges (either to a bound or zero). Suppose for instance that we know <span class="math inline">\(X_n = o_p(\frac{1}{n})\)</span>. We also therefore know that <span class="math inline">\(X_n = o_p(\frac{1}{n^{0.5}})\)</span>. Analogously, think about an object accelerating at a rate of at least <span class="math inline">\(10ms^{-2}\)</span> – that car is also accelerating at a rate at least <span class="math inline">\(5ms^{-2}\)</span>. But it’s not the case that <span class="math inline">\(o_p(\frac{1}{n}) = o_p(\frac{1}{\sqrt{n}})\)</span>. For instance a car accelerating at least as fast as <span class="math inline">\(5ms^{-2}\)</span> is not necessarily accelerating at least as fast as <span class="math inline">\(10ms^{-2}\)</span>.</p>
+<p>Hence, when we use stochastic order notation we should be careful to think of it as implying something rather than making the claim that some random variable or expression involving random variables <em>equals</em> some stochastic order.</p>
+<p>That being said, we can note some simple implications of combining <span class="math inline">\(O_p\)</span> and/or <span class="math inline">\(o_p\)</span> terms, including:</p>
+<ul>
+<li><p><span class="math inline">\(o_p(1) + o_p(1) = o_p(1)\)</span> – this is straightforward: two terms that both converge to zero at the same rate, collectively converge to zero at that rate. Note this is actually just an application of <a href="slutsky.html#cmt">Continuous Mapping Theorem</a>, since If <span class="math inline">\(X_n = o_p(1), Y_n = o_p(1)\)</span> then <span class="math inline">\(X_n \xrightarrow{p} 0, Y_n \xrightarrow{p} 0\)</span> then the addition of these two terms is a continuous mapping function, and therefore <span class="math inline">\(X_n + Y_n \xrightarrow{p} 0, \; \therefore X_n+Y_n = o_p(1)\)</span>.</p></li>
+<li><p><span class="math inline">\(O_p(1) + o_p(1) = O_p(1)\)</span> – a term that is bounded in probability (<span class="math inline">\(O_p(1)\)</span>) plus a term converging in probability to zero, is bounded in probability.</p></li>
+<li><p><span class="math inline">\(O_p(1)o_p(1) = o_p(1)\)</span> – a bounded probability multiplied by a term that converges (in the same order) to zero itself converges to zero.</p></li>
+<li><p><span class="math inline">\(o_p(R) = R\times o_p(1)\)</span> – again this is easy to see, since suppose <span class="math inline">\(X_n = o_p(R)\)</span>, then <span class="math inline">\(X_n/R = o_p(1)\)</span>, and so <span class="math inline">\(X_n = Ro_p(1)\)</span>.</p></li>
+</ul>
+<p>Further rules, and intuitive explanations for their validity, can be found in Section 2.2 of <span class="citation">Vaart (<a href="#ref-vaart_1998" role="doc-biblioref">1998</a>)</span>. The last rule above, however, is worth dwelling on briefly since it makes clear why we use different rate terms (<span class="math inline">\(R\)</span>) in the little-o operator. Consider two rates <span class="math inline">\(R^{(1)} = \frac{1}{\sqrt{n}}\)</span>, <span class="math inline">\(R^{(2)} = \frac{1}{\sqrt[3]{2}}\)</span>, and some random variable <span class="math inline">\(Y_n \xrightarrow{p}0\)</span>, that is <span class="math inline">\(Y_n = o_p(1)\)</span>. Given the final rule (and remembering the equals signs should not be read literally), if <span class="math inline">\(X_n^{(1)} = o_p(R^{(1)})\)</span>, then</p>
+<p><span class="math display">\[
+X_n^{(1)} = \frac{1}{\sqrt{n}}\times Y_n,
+\]</span>
+and if <span class="math inline">\(X_n^{(2)} = o_p(R^{(2)})\)</span>, then</p>
+<p><span class="math display">\[
+X_n^{(2)} = \frac{1}{\sqrt[3]{n}} \times Y_n.
+\]</span>
+For each value of <span class="math inline">\(Y_n\)</span> as <span class="math inline">\(n\)</span> approaches infinity, <span class="math inline">\(X_n^{(1)}\)</span> is smaller <span class="math inline">\(X_n^{(2)}\)</span>. In other words, <span class="math inline">\(X_n^{(2)}\)</span> will converge in probably towards zero more slowly. This implication of the notation, again,</p>
+</div>
+<div id="why-is-this-usefulfn_cite1" class="section level2">
+<h2><span class="header-section-number">6.3</span> Why is this useful?<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></h2>
+<p>A simple (trivial) example of this notation is to consider a sequence of random variables <span class="math inline">\(X_n\)</span> with known <span class="math inline">\(\mathbb{E}[X_n] = X\)</span>. We can therefore decompose <span class="math inline">\(X_n = X + o_p(1)\)</span>, since we know by the <a href="wlln.html#wlln">Weak Law of Large Numbers</a> that <span class="math inline">\(X_n \xrightarrow{p} X\)</span>. This is useful because, without having to introduce explicit limits into our equations, we know that with a sufficiently large <span class="math inline">\(n\)</span>, the second term of our decomposition converges to zero, and therefore we can (in a hand-wavey fashion) ignore it.</p>
+<p>Let’s consider a more meaningful example. Suppose now that <span class="math inline">\(X_n \sim N(0,n)\)</span>. Using known features of normal distributions, we can rearrange this to</p>
+<p><span class="math display">\[ \frac{X_n}{\sqrt{n}} \sim N(0,1). \]</span>
+There exists some <span class="math inline">\(M\)</span> such that the probability that a value from <span class="math inline">\(N(0,1)\)</span> exceeds <span class="math inline">\(M\)</span> is less than <span class="math inline">\(\epsilon &gt; 0\)</span>, and therefore</p>
+<p><span class="math display">\[ X_n = O_p(\sqrt{n}).\]</span></p>
+<p><span class="math inline">\(X_n\)</span> is also little-op of <span class="math inline">\(n\)</span> since</p>
+<p><span class="math display">\[\begin{aligned}
+\frac{X_n}{n} &amp;\sim N(0,\frac{n}{n^2})\\
+&amp;\sim N(0,\frac{1}{n})\\
+\end{aligned}\]</span></p>
+<p>And so we just need to prove the righthand side above is <span class="math inline">\(o_p(1)\)</span>. To do so note that:</p>
+<p><span class="math display">\[\begin{aligned}
+P(|N(0,\frac{1}{n})|&gt; \epsilon) &amp;= P(\frac{1}{\sqrt{n}}|N(0,1)| &gt; \epsilon )\\
+&amp;= P(|N(0,1)| &gt; \sqrt{n}\epsilon) \xrightarrow{p} 0.
+\end{aligned}\]</span></p>
+<p>The last follows since <span class="math inline">\(\sqrt{n} \to \infty\)</span>, and so the probability that the standard normal is greater than <span class="math inline">\(\infty\)</span> decreases to zero. Hence <span class="math inline">\(X_n = o_p(n)\)</span>.</p>
+<p><span class="math display">\[ \lim_{n\to\infty}P\left( \left| \frac{N(0,\frac{1}{n})}{n} \right| \geq \epsilon \right) = 0 = o_p(1), \]</span></p>
+<p>for all <span class="math inline">\(\epsilon &gt; 0\)</span>, and therefore that</p>
+<p><span class="math display">\[X_n = o_p(n)\]</span>.</p>
+<p>The big-O, little-o notation captures the complexity of the equation or, equivalently, the rate at which it converges. One way to read <span class="math inline">\(X_n = o_p(a_n)\)</span> is that, for any multiple of <span class="math inline">\(j\)</span>, <span class="math inline">\(X_n\)</span> converges in probability to zero at the rate determined by <span class="math inline">\(a_n\)</span>. So, for example, <span class="math inline">\(o_p(a_n^2)\)</span> converges faster than <span class="math inline">\(o_p(a_n)\)</span>, since for some random variable <span class="math inline">\(X_n\)</span>, <span class="math inline">\(\frac{X_n}{a_n^2} &lt; \frac{X_n}{a_n}, n &gt; 1.\)</span></p>
+<p>When we want to work out the asymptotic limits of a more complicated equation, where multiple terms are affected by the number of observations, if we have a term that converges in probability to zero at a faster rate than others then we can safely ignore that term.</p>
+</div>
+<div id="estimator_consistency" class="section level2">
+<h2><span class="header-section-number">6.4</span> Worked Example: Consistency of mean estimators</h2>
+<p>A parameter is “consistent” if it converges in probability to the true parameter as the number of observations increases. More formally, a parameter estimate <span class="math inline">\(\hat{\theta}\)</span> is consistent if</p>
+<p><span class="math display">\[ P(|\hat{\theta} - \theta| \geq \epsilon) \xrightarrow{p} 0, \]</span>
+where <span class="math inline">\(\theta\)</span> is the true parameter.</p>
+<p>One question we can ask is how <em>fast</em> our consistent parameter estimate converges on the true parameter value. This is an “applied” methods problem to the extent that, as researchers seeking to make an inference about the true parameter, and confronted with potentially many ways of estimating it, we want to choose an efficient estimator i.e. one that gets to the truth quickest!</p>
+<p>Let’s suppose we want to estimate the population mean of <span class="math inline">\(X\)</span>, i.e. <span class="math inline">\(\bar{X}\)</span>. Suppose further we have two potential estimators, the sample mean is <span class="math inline">\(\frac{1}{N}\sum_{i=1}^N X_i\)</span> and the median is <span class="math inline">\(X_{(N+1)/2}\)</span>, where <span class="math inline">\(N = 2n + 1\)</span> (we’ll assume an odd number of observations for the ease of calculation) and <span class="math inline">\(X\)</span> is an ordered sequence from smallest to largest.</p>
+<p>We know by the <a href="wlln.html#clt">Central Limit Theorem</a> that the sample mean</p>
+<p><span class="math display">\[ \bar{X}_N \sim \mathcal{N}(\theta, \frac{\sigma^2}{N}), \]</span></p>
+<p>and note that I use <span class="math inline">\(\mathcal{N}\)</span> to denote the normal distribution function, to avoid confusion with the total number of observations <span class="math inline">\(N\)</span>.</p>
+<p>Withholding the proof, the large-sample distribution of the median estimator can be expressed <em>approximately</em><a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> as</p>
+<p><span class="math display">\[ \text{Med}(X_1,X_2,...,X_N) \sim \mathcal{N}(\theta, \frac{\pi\sigma^2}{2N}). \]</span></p>
+<p>How do these estimators perform in practice? Let’s first check this via Monte Carlo, by simulating draws of a standard normal distribution with various sizes of N and plotting the resulting distribution of the two estimators:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="big-op-and-little-op.html#cb3-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href="big-op-and-little-op.html#cb3-2"></a><span class="kw">library</span>(ccaPP) <span class="co"># This pkg includes a fast algorithm for the median</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="big-op-and-little-op.html#cb4-1"></a><span class="co"># Compute sample mean and median 1000 times, using N draws from std. normal</span></span>
+<span id="cb4-2"><a href="big-op-and-little-op.html#cb4-2"></a>rep_sample &lt;-<span class="st"> </span><span class="cf">function</span>(N) {</span>
+<span id="cb4-3"><a href="big-op-and-little-op.html#cb4-3"></a>  sample_means &lt;-<span class="st"> </span><span class="kw">c</span>()</span>
+<span id="cb4-4"><a href="big-op-and-little-op.html#cb4-4"></a>  sample_medians &lt;-<span class="st"> </span><span class="kw">c</span>()</span>
+<span id="cb4-5"><a href="big-op-and-little-op.html#cb4-5"></a>  <span class="cf">for</span> (s <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">1000</span>) {</span>
+<span id="cb4-6"><a href="big-op-and-little-op.html#cb4-6"></a>    sample &lt;-<span class="st"> </span><span class="kw">rnorm</span>(N)</span>
+<span id="cb4-7"><a href="big-op-and-little-op.html#cb4-7"></a>    sample_means[s] &lt;-<span class="st"> </span><span class="kw">mean</span>(sample)</span>
+<span id="cb4-8"><a href="big-op-and-little-op.html#cb4-8"></a>    sample_medians[s] &lt;-<span class="st"> </span><span class="kw">fastMedian</span>(sample)</span>
+<span id="cb4-9"><a href="big-op-and-little-op.html#cb4-9"></a>  }</span>
+<span id="cb4-10"><a href="big-op-and-little-op.html#cb4-10"></a>  <span class="kw">return</span>(<span class="kw">data.frame</span>(<span class="dt">N =</span> N, <span class="dt">Mean =</span> sample_means, <span class="dt">Median =</span> sample_medians))</span>
+<span id="cb4-11"><a href="big-op-and-little-op.html#cb4-11"></a>}</span>
+<span id="cb4-12"><a href="big-op-and-little-op.html#cb4-12"></a></span>
+<span id="cb4-13"><a href="big-op-and-little-op.html#cb4-13"></a><span class="kw">set.seed</span>(<span class="dv">89</span>)</span>
+<span id="cb4-14"><a href="big-op-and-little-op.html#cb4-14"></a>Ns &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="kw">seq</span>(<span class="dv">50</span>,<span class="dv">250</span>, <span class="dt">by =</span> <span class="dv">50</span>)) <span class="co"># A series of sample sizes</span></span>
+<span id="cb4-15"><a href="big-op-and-little-op.html#cb4-15"></a></span>
+<span id="cb4-16"><a href="big-op-and-little-op.html#cb4-16"></a><span class="co"># Apply function and collect results, then pivot dataset to make plotting easier</span></span>
+<span id="cb4-17"><a href="big-op-and-little-op.html#cb4-17"></a>sim_results &lt;-<span class="st"> </span><span class="kw">do.call</span>(<span class="st">&quot;rbind&quot;</span>, <span class="kw">lapply</span>(Ns, <span class="dt">FUN =</span> <span class="cf">function</span>(x) <span class="kw">rep_sample</span>(x))) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-18"><a href="big-op-and-little-op.html#cb4-18"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="op">-</span>N, <span class="dt">names_to =</span> <span class="st">&quot;Estimator&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;estimate&quot;</span>)</span>
+<span id="cb4-19"><a href="big-op-and-little-op.html#cb4-19"></a></span>
+<span id="cb4-20"><a href="big-op-and-little-op.html#cb4-20"></a><span class="kw">ggplot</span>(sim_results, <span class="kw">aes</span>(<span class="dt">x =</span> estimate, <span class="dt">color =</span> Estimator, <span class="dt">fill =</span> Estimator)) <span class="op">+</span></span>
+<span id="cb4-21"><a href="big-op-and-little-op.html#cb4-21"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>N, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>, <span class="dt">labeller =</span> <span class="st">&quot;label_both&quot;</span>) <span class="op">+</span></span>
+<span id="cb4-22"><a href="big-op-and-little-op.html#cb4-22"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb4-23"><a href="big-op-and-little-op.html#cb4-23"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Value&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Density&quot;</span>) <span class="op">+</span></span>
+<span id="cb4-24"><a href="big-op-and-little-op.html#cb4-24"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<p><img src="10EconometricTheorems_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Here we can see that for both the mean and median sample estimators, the distribution of parameters is normally distributed around the true mean (<span class="math inline">\(\theta = 0\)</span>). The variance of the sample mean distribution, however, shrinks faster than that of the sample median estimator. In other words, the sample mean is more “efficient” (in fact it is the most efficient estimator). Efficiency here captures what we noted mathematically above – that the rate of convergence on the true parameter (i.e. the rate at which the estimator converges on zero) is faster for the sample mean than the median.</p>
+<p>Note that both estimators are therefore unbiased (they are centred on <span class="math inline">\(\theta\)</span>), normally distributed, and are consistent (the sampling distributions shrink towards the true parameter as N increases), but that the variances shrinks at slightly different rates.</p>
+<p>We can quantify this using little-o notation and the behaviour of these estimators with large-samples. First, we can define the estimation errors of the mean and median respectively as</p>
+<p><span class="math display">\[
+\begin{aligned}
+\psi_\text{Mean} &amp;= \hat{\theta} - \theta \\ 
+&amp;= \mathcal{N}(\theta, \frac{\sigma^2}{N}) - \mathcal{N}(\theta,0) \\
+&amp;= \mathcal{N}(0,\frac{\sigma^2}{N}).
+\end{aligned}
+\]</span></p>
+<p>Similarly,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\psi_\text{Med.} &amp;= \mathcal{N}(\theta, \frac{\pi\sigma^2}{2N}) - \mathcal{N}(\theta,0)  \\
+&amp; = \mathcal{N}(0, \frac{\pi\sigma^2}{2N}).
+\end{aligned}
+\]</span></p>
+<p>With both mean and median expressions, we can see that the error of the estimators is centered around zero (i.e. it is unbiased), and that the dispersion of the error around zero decreases as <span class="math inline">\(N\)</span> increases. Given earlier discussions in this chapter, we can rearrange both to find out their rate of convergence.</p>
+<p>For the sample mean:</p>
+<p><span class="math display">\[ 
+\begin{aligned}
+\psi_\text{Mean} &amp;= \frac{1}{\sqrt{N}}\mathcal{N}(0,\sigma^2) \\
+\frac{\psi_\text{Mean}}{N^{-0.5}} &amp;= \mathcal{N}(0,\sigma^2)
+\end{aligned}
+\]</span></p>
+<p>We know that for a normal distribution, there will be some <span class="math inline">\(M_\epsilon\)</span>, <span class="math inline">\(N_\epsilon\)</span>, such that <span class="math inline">\(P(|\mathcal{N}(0,\sigma^2)| \geq M_\epsilon) &lt; \epsilon\)</span>, and hence:</p>
+<p><span class="math display">\[\psi_\text{Mean} = O_p(\frac{1}{\sqrt{N}}).\]</span>
+Similarly, for the sample median:</p>
+<p><span class="math display">\[ 
+\begin{aligned}
+\psi_\text{Med.} &amp;= \mathcal{N}(0, \frac{\pi\sigma^2}{2N}) \\
+&amp;= \left( \frac{\pi}{2N}\right)^{0.5}\mathcal{N}(0,\sigma^2) \\
+\psi_\text{Med.}/\left( \frac{\pi}{2N}\right)^{0.5} &amp;= \mathcal{N}(0,\sigma^2)\\
+\psi_\text{Med.} &amp;= O_p\left( \left[\frac{\pi}{2N}\right]^{0.5}\right) \\
+&amp;= O_p\left(\frac{\sqrt{\pi}}{\sqrt{2N}}\right).
+\end{aligned}
+\]</span></p>
+<p>Now we can see that the big-op of the sample median’s estimating error is “slower” (read: larger) than the big-op of the sample mean, meaning that the sample mean converges on the true parameter with fewer observations than the sample median.</p>
+<p>Another, easy way to see the intuition behind this point is to note that at intermediary steps in the above rearrangements:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\psi_\text{Mean} &amp;= \frac{1}{\sqrt{N}}\mathcal{N}(0,\sigma^2) \\
+\psi_\text{Med.} &amp;= \frac{\sqrt{\pi}}{\sqrt{2N}}\mathcal{N}(0,\sigma^2), \\
+\end{aligned}
+\]</span>
+and so, for any sized sample, the estimating error of the median is larger than that of the mean. To visualise this, we can plot the estimation error as a function of <span class="math inline">\(N\)</span> using the rates derived above:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="big-op-and-little-op.html#cb5-1"></a>N &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="fl">0.01</span>,<span class="dv">100</span>, <span class="dt">by =</span> <span class="fl">0.01</span>)</span>
+<span id="cb5-2"><a href="big-op-and-little-op.html#cb5-2"></a>mean_convergence &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="kw">sqrt</span>(N)</span>
+<span id="cb5-3"><a href="big-op-and-little-op.html#cb5-3"></a>median_convergence &lt;-<span class="st"> </span><span class="kw">sqrt</span>(pi)<span class="op">/</span><span class="kw">sqrt</span>(<span class="dv">2</span><span class="op">*</span>N)</span>
+<span id="cb5-4"><a href="big-op-and-little-op.html#cb5-4"></a></span>
+<span id="cb5-5"><a href="big-op-and-little-op.html#cb5-5"></a>plot_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(N, <span class="dt">Mean =</span> mean_convergence, <span class="dt">Median =</span> median_convergence) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb5-6"><a href="big-op-and-little-op.html#cb5-6"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="op">-</span>N, <span class="dt">names_to =</span> <span class="st">&quot;Estimator&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;Rate&quot;</span>)</span>
+<span id="cb5-7"><a href="big-op-and-little-op.html#cb5-7"></a></span>
+<span id="cb5-8"><a href="big-op-and-little-op.html#cb5-8"></a><span class="kw">ggplot</span>(plot_df, <span class="kw">aes</span>(<span class="dt">x =</span> N, <span class="dt">y =</span> Rate, <span class="dt">color =</span> Estimator)) <span class="op">+</span></span>
+<span id="cb5-9"><a href="big-op-and-little-op.html#cb5-9"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb5-10"><a href="big-op-and-little-op.html#cb5-10"></a><span class="st">  </span><span class="kw">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>) <span class="op">+</span></span>
+<span id="cb5-11"><a href="big-op-and-little-op.html#cb5-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-5"></span>
+<img src="10EconometricTheorems_files/figure-html/unnamed-chunk-5-1.png" alt="Simulated distribution of sample mean and median estimators for different sized samples." width="672" />
+<p class="caption">
+Figure 6.1: Simulated distribution of sample mean and median estimators for different sized samples.
+</p>
+</div>
+<p>Note that the median rate line is always above the mean line for all <span class="math inline">\(N\)</span> (though not by much) – it therefore has a slower convergence.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-vaart_1998">
+<p>Vaart, A. W. van der. 1998. <em>Asymptotic Statistics</em>. Cambridge Series in Statistical and Probabilistic Mathematics. Cambridge University Press. <a href="https://doi.org/10.1017/CBO9780511802256">https://doi.org/10.1017/CBO9780511802256</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="7">
+<li id="fn7"><p>The first two examples in this section are adapted from Ashesh Rambachan’s <a href="https://scholar.harvard.edu/files/asheshr/files/asymptotics-slides.pdf">Asymptotics Review lecture slides</a>, from Harvard Math Camp – Econometrics 2018.<a href="big-op-and-little-op.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>See <a href="https://mathworld.wolfram.com/StatisticalMedian.html">this Wolfram MathWorld post</a> for more information about the exact CLT distribution of sample medians.<a href="big-op-and-little-op.html#fnref8" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="slutsky.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="dm.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/07-op.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["10EconometricTheorems.pdf", "10EconometricTheorems.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

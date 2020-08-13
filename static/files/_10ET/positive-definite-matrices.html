@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Positive Definite Matrices | J. Wooldridge’s 10 Most Important Theorems</title>
+  <meta name="description" content="This book walks through the ten most important statistical theorems as highlighted by Jeffrey Wooldridge, presenting intuiitions, proofs, and applications." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Positive Definite Matrices | J. Wooldridge’s 10 Most Important Theorems" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book walks through the ten most important statistical theorems as highlighted by Jeffrey Wooldridge, presenting intuiitions, proofs, and applications." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Positive Definite Matrices | J. Wooldridge’s 10 Most Important Theorems" />
+  
+  <meta name="twitter:description" content="This book walks through the ten most important statistical theorems as highlighted by Jeffrey Wooldridge, presenting intuiitions, proofs, and applications." />
+  
+
+<meta name="author" content="Thomas S. Robinson" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="frisch.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Wooldridge's 10 Theorems</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="exp-theorems.html"><a href="exp-theorems.html"><i class="fa fa-check"></i><b>1</b> Expectation Theorems</a><ul>
+<li class="chapter" data-level="1.1" data-path="exp-theorems.html"><a href="exp-theorems.html#law-of-iterated-expectations"><i class="fa fa-check"></i><b>1.1</b> Law of Iterated Expectations</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-lie"><i class="fa fa-check"></i><b>1.1.1</b> Proof of LIE</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="exp-theorems.html"><a href="exp-theorems.html#law-of-total-variance"><i class="fa fa-check"></i><b>1.2</b> Law of Total Variance</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-ltv"><i class="fa fa-check"></i><b>1.2.1</b> Proof of LTV</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="exp-theorems.html"><a href="exp-theorems.html#linearity-of-expectations"><i class="fa fa-check"></i><b>1.3</b> Linearity of Expectations</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-loe"><i class="fa fa-check"></i><b>1.3.1</b> Proof of LOE</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="exp-theorems.html"><a href="exp-theorems.html#variance-of-a-sum"><i class="fa fa-check"></i><b>1.4</b> Variance of a Sum</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-vos-x-y-are-independent"><i class="fa fa-check"></i><b>1.4.1</b> Proof of VoS: <span class="math inline">\(X, Y\)</span> are independent</a></li>
+<li class="chapter" data-level="1.4.2" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-vos-x-y-are-dependent"><i class="fa fa-check"></i><b>1.4.2</b> Proof of VoS: <span class="math inline">\(X, Y\)</span> are dependent</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exp-ineq.html"><a href="exp-ineq.html"><i class="fa fa-check"></i><b>2</b> Inequalities involving expectations</a><ul>
+<li class="chapter" data-level="2.1" data-path="exp-ineq.html"><a href="exp-ineq.html#jensens-inequality"><i class="fa fa-check"></i><b>2.1</b> Jensen’s Inequality</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="exp-ineq.html"><a href="exp-ineq.html#convex-functions"><i class="fa fa-check"></i><b>2.1.1</b> Convex functions</a></li>
+<li class="chapter" data-level="2.1.2" data-path="exp-ineq.html"><a href="exp-ineq.html#the-inequality"><i class="fa fa-check"></i><b>2.1.2</b> The Inequality</a></li>
+<li class="chapter" data-level="2.1.3" data-path="exp-ineq.html"><a href="exp-ineq.html#proof_ji"><i class="fa fa-check"></i><b>2.1.3</b> Proof</a></li>
+<li class="chapter" data-level="2.1.4" data-path="exp-ineq.html"><a href="exp-ineq.html#application"><i class="fa fa-check"></i><b>2.1.4</b> Application</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="exp-ineq.html"><a href="exp-ineq.html#chebyshevs-inequality"><i class="fa fa-check"></i><b>2.2</b> Chebyshev’s Inequality</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="exp-ineq.html"><a href="exp-ineq.html#proof"><i class="fa fa-check"></i><b>2.2.1</b> Proof</a></li>
+<li class="chapter" data-level="2.2.2" data-path="exp-ineq.html"><a href="exp-ineq.html#applications"><i class="fa fa-check"></i><b>2.2.2</b> Applications</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="linear-projection.html"><a href="linear-projection.html"><i class="fa fa-check"></i><b>3</b> Linear Projection</a><ul>
+<li class="chapter" data-level="3.1" data-path="linear-projection.html"><a href="linear-projection.html#proj_def"><i class="fa fa-check"></i><b>3.1</b> Projection</a></li>
+<li class="chapter" data-level="3.2" data-path="linear-projection.html"><a href="linear-projection.html#proj_prop"><i class="fa fa-check"></i><b>3.2</b> Properties of the projection matrix</a></li>
+<li class="chapter" data-level="3.3" data-path="linear-projection.html"><a href="linear-projection.html#lp_lr"><i class="fa fa-check"></i><b>3.3</b> Linear regression</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="linear-projection.html"><a href="linear-projection.html#geometric-interpretation"><i class="fa fa-check"></i><b>3.3.1</b> Geometric interpretation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wlln.html"><a href="wlln.html"><i class="fa fa-check"></i><b>4</b> Weak Law of Large Numbers and Central Limit Theorem</a><ul>
+<li class="chapter" data-level="4.1" data-path="wlln.html"><a href="wlln.html#weak-law-of-large-numbers"><i class="fa fa-check"></i><b>4.1</b> Weak Law of Large Numbers</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="wlln.html"><a href="wlln.html#theorem-in-plain-english"><i class="fa fa-check"></i><b>4.1.1</b> Theorem in Plain English</a></li>
+<li class="chapter" data-level="4.1.2" data-path="wlln.html"><a href="wlln.html#proof_wlln"><i class="fa fa-check"></i><b>4.1.2</b> Proof</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="wlln.html"><a href="wlln.html#clt"><i class="fa fa-check"></i><b>4.2</b> Central Limit Theorem</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="wlln.html"><a href="wlln.html#theorem-in-plain-english-1"><i class="fa fa-check"></i><b>4.2.1</b> Theorem in Plain English</a></li>
+<li class="chapter" data-level="4.2.2" data-path="wlln.html"><a href="wlln.html#primer-characteristic-functions"><i class="fa fa-check"></i><b>4.2.2</b> Primer: Characteristic Functions</a></li>
+<li class="chapter" data-level="4.2.3" data-path="wlln.html"><a href="wlln.html#proof-of-clt"><i class="fa fa-check"></i><b>4.2.3</b> Proof of CLT</a></li>
+<li class="chapter" data-level="4.2.4" data-path="wlln.html"><a href="wlln.html#generalising-clt"><i class="fa fa-check"></i><b>4.2.4</b> Generalising CLT</a></li>
+<li class="chapter" data-level="4.2.5" data-path="wlln.html"><a href="wlln.html#limitation-of-clt-and-the-importance-of-wlln"><i class="fa fa-check"></i><b>4.2.5</b> Limitation of CLT (and the importance of WLLN)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="slutsky.html"><a href="slutsky.html"><i class="fa fa-check"></i><b>5</b> Slutsky’s Theorem</a><ul>
+<li class="chapter" data-level="5.1" data-path="slutsky.html"><a href="slutsky.html#theorem_slutsky"><i class="fa fa-check"></i><b>5.1</b> Theorem in plain English</a></li>
+<li class="chapter" data-level="5.2" data-path="slutsky.html"><a href="slutsky.html#coded-demonstration"><i class="fa fa-check"></i><b>5.2</b> Coded demonstration</a></li>
+<li class="chapter" data-level="5.3" data-path="slutsky.html"><a href="slutsky.html#proof-of-slutskys-theorem"><i class="fa fa-check"></i><b>5.3</b> Proof of Slutsky’s Theorem</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="slutsky.html"><a href="slutsky.html#cmt"><i class="fa fa-check"></i><b>5.3.1</b> CMT</a></li>
+<li class="chapter" data-level="5.3.2" data-path="slutsky.html"><a href="slutsky.html#proof-using-cmt"><i class="fa fa-check"></i><b>5.3.2</b> Proof using CMT</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="slutsky.html"><a href="slutsky.html#applications_slutsky"><i class="fa fa-check"></i><b>5.4</b> Applications</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="slutsky.html"><a href="slutsky.html#proving-the-consistency-of-sample-variance-and-the-normality-of-the-t-statistic"><i class="fa fa-check"></i><b>5.4.1</b> Proving the consistency of sample variance, and the normality of the t-statistic</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html"><i class="fa fa-check"></i><b>6</b> Big Op and little op</a><ul>
+<li class="chapter" data-level="6.1" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#stochastic-order-notation"><i class="fa fa-check"></i><b>6.1</b> Stochastic order notation</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#relationship-of-big-o-and-little-o"><i class="fa fa-check"></i><b>6.1.1</b> Relationship of big-O and little-o</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#notational-shorthand-and-arithmetic-properties"><i class="fa fa-check"></i><b>6.2</b> Notational shorthand and ``arithmetic" properties</a></li>
+<li class="chapter" data-level="6.3" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#why-is-this-usefulfn_cite1"><i class="fa fa-check"></i><b>6.3</b> Why is this useful?</a></li>
+<li class="chapter" data-level="6.4" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#estimator_consistency"><i class="fa fa-check"></i><b>6.4</b> Worked Example: Consistency of mean estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="dm.html"><a href="dm.html"><i class="fa fa-check"></i><b>7</b> Delta Method</a><ul>
+<li class="chapter" data-level="7.1" data-path="dm.html"><a href="dm.html#delta-method-in-plain-english"><i class="fa fa-check"></i><b>7.1</b> Delta Method in Plain English</a></li>
+<li class="chapter" data-level="7.2" data-path="dm.html"><a href="dm.html#proof_dm"><i class="fa fa-check"></i><b>7.2</b> Proof</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="dm.html"><a href="dm.html#taylors-series-and-theorem"><i class="fa fa-check"></i><b>7.2.1</b> Taylor’s Series and Theorem</a></li>
+<li class="chapter" data-level="7.2.2" data-path="dm.html"><a href="dm.html#proof-of-delta-method"><i class="fa fa-check"></i><b>7.2.2</b> Proof of Delta Method</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="dm.html"><a href="dm.html#applied-example"><i class="fa fa-check"></i><b>7.3</b> Applied example</a></li>
+<li class="chapter" data-level="7.4" data-path="dm.html"><a href="dm.html#alternative-strategies"><i class="fa fa-check"></i><b>7.4</b> Alternative strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="frisch.html"><a href="frisch.html"><i class="fa fa-check"></i><b>8</b> Frisch-Waugh-Lovell Theorem</a><ul>
+<li class="chapter" data-level="8.1" data-path="wlln.html"><a href="wlln.html#theorem-in-plain-english"><i class="fa fa-check"></i><b>8.1</b> Theorem in plain English</a></li>
+<li class="chapter" data-level="8.2" data-path="frisch.html"><a href="frisch.html#proof_fw"><i class="fa fa-check"></i><b>8.2</b> Proof</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="frisch.html"><a href="frisch.html#primer-projection-matricessecnote"><i class="fa fa-check"></i><b>8.2.1</b> Primer: Projection matrices</a></li>
+<li class="chapter" data-level="8.2.2" data-path="frisch.html"><a href="frisch.html#fwl-proof-secnote2"><i class="fa fa-check"></i><b>8.2.2</b> FWL Proof</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="frisch.html"><a href="frisch.html#coded-example"><i class="fa fa-check"></i><b>8.3</b> Coded example</a></li>
+<li class="chapter" data-level="8.4" data-path="frisch.html"><a href="frisch.html#application-sensitivity-analysis"><i class="fa fa-check"></i><b>8.4</b> Application: Sensitivity analysis</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="frisch.html"><a href="frisch.html#regressing-the-partialled-out-x-on-the-full-y"><i class="fa fa-check"></i><b>8.4.1</b> Regressing the partialled-out X on the full Y</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="positive-definite-matrices.html"><a href="positive-definite-matrices.html"><i class="fa fa-check"></i><b>9</b> Positive Definite Matrices</a><ul>
+<li class="chapter" data-level="9.1" data-path="positive-definite-matrices.html"><a href="positive-definite-matrices.html#pd_terms"><i class="fa fa-check"></i><b>9.1</b> Terminology</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="positive-definite-matrices.html"><a href="positive-definite-matrices.html#positivity"><i class="fa fa-check"></i><b>9.1.1</b> Positivity</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="positive-definite-matrices.html"><a href="positive-definite-matrices.html#a-b-is-psd-iff-b-1---a-1-is-psd"><i class="fa fa-check"></i><b>9.2</b> <span class="math inline">\(A-B\)</span> is PSD iff <span class="math inline">\(B^{-1} - A^{-1}\)</span> is PSD</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="positive-definite-matrices.html"><a href="positive-definite-matrices.html#pd_proof"><i class="fa fa-check"></i><b>9.2.1</b> Proof</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="positive-definite-matrices.html"><a href="positive-definite-matrices.html#pd_app"><i class="fa fa-check"></i><b>9.3</b> Applications</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="positive-definite-matrices.html"><a href="positive-definite-matrices.html#ols-as-the-best-linear-unbiased-estimator-blue"><i class="fa fa-check"></i><b>9.3.1</b> OLS as the best linear unbiased estimator (BLUE)</a></li>
+<li class="chapter" data-level="9.3.2" data-path="positive-definite-matrices.html"><a href="positive-definite-matrices.html#optimisation-problems"><i class="fa fa-check"></i><b>9.3.2</b> Optimisation problems</a></li>
+<li class="chapter" data-level="9.3.3" data-path="positive-definite-matrices.html"><a href="positive-definite-matrices.html#recap"><i class="fa fa-check"></i><b>9.3.3</b> Recap</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">J. Wooldridge’s 10 Most Important Theorems</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="positive-definite-matrices" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Positive Definite Matrices</h1>
+<div id="pd_terms" class="section level2">
+<h2><span class="header-section-number">9.1</span> Terminology</h2>
+<p>A <span class="math inline">\(n \times n\)</span> symmetric matrix <span class="math inline">\(M\)</span> is <em>positive definite (PD)</em> if and only if <span class="math inline">\(x&#39;Mx &gt; 0\)</span>, for all <em>non-zero</em> <span class="math inline">\(x \in \mathbb{R}^n\)</span>. For example, take the <span class="math inline">\(3 \times 3\)</span> identity matrix, and a column vector of non-zero real numbers <span class="math inline">\([a,b,c]\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\begin{bmatrix}
+a &amp; b &amp; c
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+a \\
+b \\
+c
+\end{bmatrix} \\
+= \begin{bmatrix}
+a &amp; b &amp; c
+\end{bmatrix}
+\begin{bmatrix}
+a \\
+b \\
+c
+\end{bmatrix} \\
+= a^2 + b^2 + c^2.
+\end{aligned}
+\]</span></p>
+<p>Since by definition <span class="math inline">\(a^2, b^2,\)</span> and <span class="math inline">\(c^2\)</span> are all greater than zero (even if <span class="math inline">\(a,b,\)</span> or <span class="math inline">\(c\)</span> are negative), their sum is also positive.</p>
+<p>A matrix is <em>positive semi-definite (PSD)</em> if and only if <span class="math inline">\(x&#39;Mx \geq 0\)</span> for all non-zero <span class="math inline">\(x \in \mathbb{R}^n\)</span>. Note that PSD differs from PD in that the transformation of the matrix is no longer <em>strictly</em> positive.</p>
+<p>One known feature of matrices (that will be useful later in this chapter) is that if a matrix is symmetric and idempotent then it will be positive semi-definite. Take some non-zero vector <span class="math inline">\(x\)</span>, and a symmetric, idempotent matrix <span class="math inline">\(A\)</span>. By idempotency we know that <span class="math inline">\(x&#39;Ax = x&#39;AAx\)</span>. By symmetry we know that <span class="math inline">\(A&#39; = A\)</span>, and therefore:</p>
+<p><span class="math display">\[
+\begin{aligned}
+x&#39;Ax &amp;= x&#39;AAx \\
+&amp;= x&#39;A&#39;Ax \\
+&amp;= (Ax)&#39;Ax \geq 0,
+\end{aligned}
+\]</span></p>
+<p>and hence PSD.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
+<div id="positivity" class="section level3">
+<h3><span class="header-section-number">9.1.1</span> Positivity</h3>
+<p>Both PD and PSD are concerned with positivity. For scalar values like -2, 5, 89, positivity simply refers to their sign – and we can tell immediately whether the numbers are positive or not. Some functions are also (strictly) positive. Think about <span class="math inline">\(f(x) = x^2 + 1\)</span>. For all <span class="math inline">\(x \in \mathbb{R}\)</span>, <span class="math inline">\(f(x) \geq 1 &gt; 0\)</span>. PD and PSD extend this notion of a positivity to matrices, which is useful when we consider multidimensional optimisation problems or the combination of matrices.</p>
+<p>While for abstract matrices like the identity matrix it is easy to verify PD and PSD properties, for more complicated matrices we often require other more complicated methods. For example, we know that a symmetric matrix is PSD if and only if all its <em>eigenvalues</em> are non-negative. The eigenvalue <span class="math inline">\(\lambda\)</span> is a scalar such that, for a matrix <span class="math inline">\(A\)</span> and non-zero <span class="math inline">\(n\times 1\)</span> vector <span class="math inline">\(v\)</span>, <span class="math inline">\(A\cdot v = \lambda \cdot v\)</span>. While I do not explore this further in this chapter, there are <a href="https://lpsa.swarthmore.edu/MtrxVibe/EigMat/MatrixEigen.html">methods available</a> for recovering these values from the preceding equation. Further discussion of the full properties of PD and PSD matrices can be found <a href="http://theanalysisofdata.com/probability/C_4.html">here</a> as well as in print <span class="citation">(e.g. Horn and Johnson <a href="#ref-horn_2013" role="doc-biblioref">2013</a>, Chapter 7)</span>.</p>
+</div>
+</div>
+<div id="a-b-is-psd-iff-b-1---a-1-is-psd" class="section level2">
+<h2><span class="header-section-number">9.2</span> <span class="math inline">\(A-B\)</span> is PSD iff <span class="math inline">\(B^{-1} - A^{-1}\)</span> is PSD</h2>
+<p>Wooldridge’s list of 10 theorems does not actually include a general claim about the importance P(S)D matrices. Instead, he lists a very specific feature of two PD matrices. In plain English, this theorem states that, assuming <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both positive definite, <span class="math inline">\(A-B\)</span> is positive semi-definite if and only if the inverse of <span class="math inline">\(B\)</span> minus the inverse of <span class="math inline">\(A\)</span> is positive semi-definite.</p>
+<p>Before we prove this theorem, it’s worth noting a few points that are immediately intuitive from its statement. Note that the theorem moves from PD matrices to PSD matrices. This is because we are subtracting one matrix from another. While we know A and B are both PD, if they are both equal then <span class="math inline">\(x&#39;(A-B)x\)</span> will equal zero. For example, if <span class="math inline">\(A = B = I_2 = \big(\begin{smallmatrix} 1 &amp; 0\\ 0 &amp; 1 \end{smallmatrix}\big)\)</span>, then <span class="math inline">\(A-B = \big(\begin{smallmatrix} 0 &amp; 0\\ 0 &amp; 0 \end{smallmatrix}\big)\)</span>. Hence, <span class="math inline">\(x&#39;(A-B)x = 0\)</span> and therefore <span class="math inline">\(A-B\)</span> is PSD, but not PD.</p>
+<p>Also note that this theorem only applies to a certain class of matrices, namely those we know to be PD. This hints at the sort of applied relevance this theorem may have. For instance, we know that variance is a strictly positive quantity.</p>
+<p>The actual applied relevance of this theorem is not particularly obvious, at least from the claim alone. In his post, Wooldridge notes that he repeatedly uses this fact ‘to show the asymptotic efficiency of various estimators.’ In his <em>Introductory Economics</em> textbook <span class="citation">(<a href="#ref-Wooldridge_intro" role="doc-biblioref">2013</a>)</span>, for instance, Wooldridge makes use of the properties of PSD matrices in proving that the Gauss-Markov (GM) assumptions ensure that OLS is the best, linear, unbiased estimator (BLUE). And, more generally, PD and PSD matrices are very helpful in optimisation problems (of relevance to machine learning too). Neither appear to be direct applications of this specific, bidirectional theorem. In the remainder of this chapter, therefore, I prove the theorem itself for completeness. I then broaden the discussion to explore how PSD properties are used in Wooldridge’s BLUE proof as well as discuss the more general role of PD matrices in optimisation problems.</p>
+<div id="pd_proof" class="section level3">
+<h3><span class="header-section-number">9.2.1</span> Proof</h3>
+<p>The proof of Wooldridge’s actual claim is straightforward. In fact, given the symmetry of the proof, we only need to prove one direction (i.e. if <span class="math inline">\(A-B\)</span> is PSD, then <span class="math inline">\(A^{-1} - B^{-1}\)</span> is PSD.)</p>
+<p>Let’s assume, therefore, that <span class="math inline">\(A - B\)</span> is PSD. Hence:</p>
+<p><span class="math display">\[
+\begin{aligned}
+x&#39;(A-B)x &amp;\geq 0 \\
+x&#39;Ax - xBx &amp;\geq 0 \\
+x&#39;Ax &amp;\geq x&#39;Bx \\
+Ax &amp;\geq Bx \\
+A &amp;\geq B.
+\end{aligned}
+\]</span></p>
+<p>Next, we can invert our two matrices while maintaining the inequality:</p>
+<p><span class="math display">\[
+\begin{aligned}
+A^{-1}AB^{-1} &amp;\geq A^{-1}BB^{-1} \\
+IB^{-1} &amp;\geq A^{-1}I \\
+B^{-1} &amp;\geq A^{-1}.
+\end{aligned}
+\]</span></p>
+<p>Finally, we can just remultiply both sides of the inequality by our arbitrary non-zero vector:</p>
+<p><span class="math display">\[
+\begin{aligned}
+x&#39;B^{-1} &amp;\geq x&#39;A^{-1} \\
+x&#39;B^{-1}x &amp;\geq x&#39;A^{-1}x \\
+x&#39;B^{-1}x - x&#39;A^{-1}x &amp;\geq 0 \\
+x&#39;(B^{-1} - A^{-1})x &amp;\geq 0.
+\end{aligned}
+\]</span></p>
+<p>Proving the opposite direction (if <span class="math inline">\(B^{-1} - A^{-1}\)</span> is PSD then <span class="math inline">\(A-B\)</span> is PSD) simply involves inverting the lines of this proof. <span class="math inline">\(\square\)</span></p>
+</div>
+</div>
+<div id="pd_app" class="section level2">
+<h2><span class="header-section-number">9.3</span> Applications</h2>
+<div id="ols-as-the-best-linear-unbiased-estimator-blue" class="section level3">
+<h3><span class="header-section-number">9.3.1</span> OLS as the best linear unbiased estimator (BLUE)</h3>
+<p>First, let’s introduce the four Gauss-Markov assumptions. I only state these briefly, in the interest of space, spending a little more time explaining the rank of a matrix. Collectively, these assumptions guarantee that the linear regression estimates <span class="math inline">\(\hat{\beta}\)</span> are BLUE (the best linear unbiased estimator of <span class="math inline">\(\beta\)</span>).</p>
+<ol style="list-style-type: decimal">
+<li><p>The true model is linear such that <span class="math inline">\(y = X\beta + u\)</span>, where <span class="math inline">\(y\)</span> is a <span class="math inline">\(n \times 1\)</span> vector, <span class="math inline">\(X\)</span> is a <span class="math inline">\(n \times (k + 1)\)</span> matrix, and <span class="math inline">\(u\)</span> is an unobserved <span class="math inline">\(n \times 1\)</span> vector.</p></li>
+<li><p>The rank of <span class="math inline">\(X\)</span> is <span class="math inline">\((k+1)\)</span> (full-rank), i.e. that there are no linear dependencies among the variables in <span class="math inline">\(X\)</span>. To understand what the rank of matrix denotes, consider the following <span class="math inline">\(3\times 3\)</span> matrix:</p></li>
+</ol>
+<p><span class="math display">\[
+  M_1=\begin{bmatrix}
+  1 &amp; 0 &amp; 0 \\
+  0 &amp; 1 &amp; 0 \\
+  2 &amp; 0 &amp; 0
+  \end{bmatrix}
+  \]</span></p>
+<p>Note that the third row of <span class="math inline">\(M_1\)</span> is just two times the first column. They are therefore entirely linearly dependent, and so not separable. The number of independent rows (the rank of the matrix) is therefore 2. One way to think about this geometrically, as in <span id="linear_projection">Chapter 3</span>, is to plot each row as a vector. The third vector would completely overlap the first, and so in terms of direction we would not be able to discern between them. In terms of the span of these two columns, moreover, there is no point that one can get to using a combination of both that one could not get to by scaling either one of them.</p>
+<p>A slightly more complicated rank-deficient (i.e. not full rank) matrix would be:</p>
+<p><span class="math display">\[
+  M_2=\begin{bmatrix}
+  1 &amp; 0 &amp; 0 \\
+  0 &amp; 1 &amp; 0 \\
+  2 &amp; 1 &amp; 0
+  \end{bmatrix}
+  \]</span></p>
+<p>Here note that the third row is not scalar multiple of either other column. But, it is a linear combination of the other two. If rows 1, 2, and 3 are represented by <span class="math inline">\(a, b,\)</span> and <span class="math inline">\(c\)</span> respectively, then <span class="math inline">\(c = 2a + b\)</span>. Again, geometrically, there is no point that the third row vector can take us to which cannot be achieved using only the first two rows.</p>
+<p>An example of a matrix with full-rank, i.e. no linear dependencies, would be:</p>
+<p><span class="math display">\[
+  M_2=\begin{bmatrix}
+  1 &amp; 0 &amp; 0 \\
+  0 &amp; 1 &amp; 0 \\
+  2 &amp; 0 &amp; 1
+  \end{bmatrix}
+  \]</span></p>
+<p>It is easy to verify that <span class="math inline">\(M_1\)</span> and <span class="math inline">\(M_2\)</span> are rank-deficient, whereas <span class="math inline">\(M_3\)</span> is of full-rank in R:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="positive-definite-matrices.html#cb10-1"></a>M1 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="dt">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb10-2"><a href="positive-definite-matrices.html#cb10-2"></a>M1_rank &lt;-<span class="st"> </span><span class="kw">qr</span>(M1)<span class="op">$</span>rank</span>
+<span id="cb10-3"><a href="positive-definite-matrices.html#cb10-3"></a></span>
+<span id="cb10-4"><a href="positive-definite-matrices.html#cb10-4"></a>M2 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="dt">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb10-5"><a href="positive-definite-matrices.html#cb10-5"></a>M2_rank &lt;-<span class="st"> </span><span class="kw">qr</span>(M2)<span class="op">$</span>rank</span>
+<span id="cb10-6"><a href="positive-definite-matrices.html#cb10-6"></a></span>
+<span id="cb10-7"><a href="positive-definite-matrices.html#cb10-7"></a>M3 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb10-8"><a href="positive-definite-matrices.html#cb10-8"></a>M3_rank &lt;-<span class="kw">qr</span>(M3)<span class="op">$</span>rank</span>
+<span id="cb10-9"><a href="positive-definite-matrices.html#cb10-9"></a></span>
+<span id="cb10-10"><a href="positive-definite-matrices.html#cb10-10"></a><span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;M1 rank:&quot;</span>, M1_rank))</span></code></pre></div>
+<pre><code>## [1] &quot;M1 rank: 2&quot;</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="positive-definite-matrices.html#cb12-1"></a><span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;M2 rank:&quot;</span>, M2_rank))</span></code></pre></div>
+<pre><code>## [1] &quot;M2 rank: 2&quot;</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="positive-definite-matrices.html#cb14-1"></a><span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;M3 rank:&quot;</span>, M3_rank))</span></code></pre></div>
+<pre><code>## [1] &quot;M3 rank: 3&quot;</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p><span class="math inline">\(\mathbb{E}[u|X] = 0\)</span> i.e. that the model has zero conditional mean or, in other words, our average error is zero.</p></li>
+<li><p><span class="math inline">\(\text{Var}(u_i|X) = \sigma^2, \text{Cov}(u_i,u_j|X) = 0\)</span> for all <span class="math inline">\(i \neq j\)</span>, or equivalently that <span class="math inline">\(Var(u|X) = \sigma^2I_n\)</span>. This matrix has diagonal elements all equal to <span class="math inline">\(\sigma^2\)</span> and all off-diagonal elements equal to zero.</p></li>
+</ol>
+<p>BLUE states that the regression coefficient vector <span class="math inline">\(\hat{\beta}\)</span> is the best, or lowest variance, estimator of the true <span class="math inline">\(\beta\)</span>. <span class="citation">Wooldridge (<a href="#ref-Wooldridge_intro" role="doc-biblioref">2013</a>)</span> has a nice onproof of this claim (p.812). Here I unpack hisi proof in slightly more detail, noting specifically how PD matrices are used.</p>
+<p>To begin our proof of BLUE, let us denote any other linear estimator as <span class="math inline">\(\tilde{\beta} = A&#39;y\)</span>, where <span class="math inline">\(A\)</span> is some <span class="math inline">\(n \times (k+1)\)</span> matrix consisting of functions of <span class="math inline">\(X\)</span>.</p>
+<p>We know by definition that <span class="math inline">\(y = X\beta + u\)</span> and therefore that:</p>
+<p><span class="math display">\[
+\tilde{\beta} = A&#39;(X\beta + u) = A&#39;X\beta + A&#39;u.
+\]</span></p>
+<p>The conditional expectation of <span class="math inline">\(\tilde{\beta}\)</span> can be expressed as:</p>
+<p><span class="math display">\[
+\mathbb{E}(\tilde{\beta}|X) = A&#39;X\beta + \mathbb{E}(A&#39;u|X),
+\]</span></p>
+<p>and since <span class="math inline">\(A\)</span> is a function of <span class="math inline">\(X\)</span>, we can move it outside the expectation:</p>
+<p><span class="math display">\[
+\mathbb{E}(\tilde{\beta}|X) = A&#39;X\beta + A&#39;\mathbb{E}(u|X).
+\]</span></p>
+<p>By the GM assumption no. 3, we know that <span class="math inline">\(\mathbb{E}(u|X) = 0\)</span>, therefore:</p>
+<p><span class="math display">\[
+\mathbb{E}(\tilde{\beta}|X) = A&#39;X\beta.
+\]</span></p>
+<p>Since we are only comparing <span class="math inline">\(\hat{\beta}\)</span> against other <em>unbiased</em> estimators, we know the conditional mean of any other estimator must equal the true parameter, and therefore that</p>
+<p><span class="math display">\[A&#39;X\beta = \beta.\]</span></p>
+<p>The only way that this is true is if <span class="math inline">\(A&#39;X = I\)</span>. Hence, we can rewrite our estimator as</p>
+<p><span class="math display">\[
+\tilde{\beta} = \beta + A&#39;u.
+\]</span></p>
+<p>The variance of our estimator <span class="math inline">\(\tilde{\beta}\)</span> then becomes</p>
+<p><span class="math display">\[
+\begin{aligned}
+Var(\tilde{\beta}|X) &amp;= (\beta - [\beta +  A&#39;u])(\beta - [\beta +  A&#39;u])&#39; \\
+&amp;= (A&#39;u)(A&#39;u)&#39; \\
+&amp;= A&#39;uu&#39;A \\
+&amp;= A&#39;[\text{Var}(u|X)]A \\
+&amp;= \sigma^2A&#39;A,
+\end{aligned}
+\]</span></p>
+<p>since by GM assumption no. 4 the variance of the errors is a constant scalar <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Hence:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Var}(\tilde{\beta}|X) - \text{Var}(\hat{\beta}|X) &amp;= \sigma^2A&#39;A - \sigma^2(X&#39;X)^{-1} \\
+&amp;= \sigma^2[A&#39;A - (X&#39;X)^{-1}].
+\end{aligned}
+\]</span>
+We know that <span class="math inline">\(A&#39;X = I\)</span>, and so we can manipulate this expression further:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Var}(\tilde{\beta}|X) - \text{Var}(\hat{\beta}|X)
+&amp;= \sigma^2[A&#39;A - (X&#39;X)^{-1}] \\
+&amp;= \sigma^2[A&#39;A - A&#39;X(X&#39;X)^{-1}X&#39;A]\\
+&amp;=\sigma^2A&#39;[A-X(X&#39;X)^{-1}X&#39;A] \\
+&amp;= \sigma^2A&#39;[I-X(X&#39;X)^{01}X&#39;]A\\
+&amp; = \sigma^2A&#39;MA.
+\end{aligned}
+\]</span></p>
+<p>Note that we encountered <span class="math inline">\(M\)</span> in <a href="frisch.html#frisch">the previous chapter</a>. It is the residual maker, and has the known property of being both symmetric and idempotent. Recall from the <a href="positive-definite-matrices.html#pd_terms">first section</a> that we know any symmetric, idempotent matrix is positive semi-definite, and so we know that</p>
+<p><span class="math display">\[
+\text{Var}(\tilde{\beta}|X) - \text{Var}(\hat{\beta}|X) \geq \sigma^2,
+\]</span></p>
+<p>and thus that the regression estimator <span class="math inline">\(\hat{\beta}\)</span> is more efficient (hence better) than any other unbiased, linear estimator of <span class="math inline">\(\beta. \;\;\; \square\)</span></p>
+<p>Note that <span class="math inline">\(\hat{\beta}\)</span> and <span class="math inline">\(\tilde{\beta}\)</span> are both <span class="math inline">\((k+1) \times 1\)</span> vectors. As Wooldridge notes at the end of the proof, for any <span class="math inline">\((k+1) \times 1\)</span> vector <span class="math inline">\(c\)</span>, we can calculate the scalar <span class="math inline">\(c&#39;\beta\)</span>. Think of <span class="math inline">\(c\)</span> as the row vector of the <em>i</em>th observation from <span class="math inline">\(X\)</span>. Then <span class="math inline">\(c&#39;\beta = c_o&#39;\beta_0 + c_1\beta_1+...+c_k\beta_k = y_i\)</span>. Both <span class="math inline">\(c&#39;\hat{\beta}\)</span> and <span class="math inline">\(c&#39;\tilde{\beta}\)</span> are both unbiased estimators of <span class="math inline">\(c&#39;\beta\)</span>. Note as an extension of the proof above that</p>
+<p><span class="math display">\[
+\text{Var}(c&#39;\tilde{\beta}|X) - \text{Var}(c&#39;\hat{\beta}|X) = c&#39;[\text{Var}(\tilde{\beta}|X) - \text{Var}(\hat{\beta}|X)]c.
+\]</span></p>
+<p>We know that <span class="math inline">\(\text{Var}(\tilde{\beta}|X) - \text{Var}(\hat{\beta}|X)\)</span> is PSD, and hence by definition that:</p>
+<p><span class="math display">\[
+c&#39;[\text{Var}(\tilde{\beta}|X) - \text{Var}(\hat{\beta}|X)]c \geq 0,
+\]</span></p>
+<p>and hence, for any observation in X (call it <span class="math inline">\(x_i\)</span>), and more broadly any linear combination of <span class="math inline">\(\hat{\beta}\)</span>, if the GM assumptions hold the estimate <span class="math inline">\(\hat{y_i} = x_i\hat{\beta}\)</span> has the smallest variance of any possible linear, unbiased estimator.</p>
+</div>
+<div id="optimisation-problems" class="section level3">
+<h3><span class="header-section-number">9.3.2</span> Optimisation problems</h3>
+<p>Optimisation problems, in essence, are about tweaking some parameter(s) until an objective function is as good as it can be. The objective function summarises some aspect of the model given a potential solution. For example, in OLS, our objection function is defined as <span class="math inline">\(\sum_i(y_i-\hat{y}_i)^2\)</span> – the sum of squared errors. Typically, “as good as it can be” stands for “is minimised” or “is maximised.” For example with OLS we seek to <em>minimise</em> the sum of the squared error terms. In a slight extension of this idea, many machine learning models aim to minimise the prediction error on a “hold-out” sample of observations i.e. observations not used to select the model parameters. The objective loss function may be the sum of squares, or it could be the mean squared error, or some more convoluted criteria.</p>
+<p>By “tweaking” we mean that the parameter values of the model are adjusted in the hope of generating an even smaller (bigger) value from our objective function. For example, in least absolute shrinkage and selection (LASSO) regression, the goal is to minimise both the squared prediction error (as in OLS) <em>as well as</em> the total size of the coefficient vector. More formally, we can write this objective function as:</p>
+<p><span class="math display">\[
+(y-X\beta)^2 + \lambda||\beta||_1,
+\]</span></p>
+<p>where <span class="math inline">\(\lambda\)</span> is some scalar, and <span class="math inline">\(||\beta||_1\)</span> is the sum of the absolute size of the coefficients i.e. <span class="math inline">\(\sum_j|\beta_j|\)</span>.</p>
+<p>There are two ways to potentially alter the value of the LASSO loss function: we can change the values within the vector <span class="math inline">\(\beta\)</span> or adjust the value of <span class="math inline">\(\lambda\)</span>. In fact, iterating through values of <span class="math inline">\(\lambda\)</span>, we can solve the squared error part of the loss function, and then choose from our many different values of <span class="math inline">\(\lambda\)</span> which results in the smallest (read: minimised) objective function.</p>
+<p>With infinitely many values of <span class="math inline">\(\lambda\)</span>, we can perfectly identify the optimal model. But we are often constrained into considering only a subset of possible cases. If we are too coarse in terms of which <span class="math inline">\(\lambda\)</span> values to consider, we may miss out on substantial optimisation.</p>
+<p>This problem is not just present in LASSO regression. Any non-parametric model (particularly those common in machine learning) is going to face similar optimisation problems. Fortunately, there are clever ways to reduce the computational intensity of these optimisation problems. Rather than iterating through a range of values (an “exhaustive grid-search”) we can instead use our current loss value to adjust our next choice of value for <span class="math inline">\(\lambda\)</span> (or whatever other parameter we are optimisimng over). This sequential method helps us narrow in on the optimal parameter values without having to necessarily consider may parameter combinations far from the minima.</p>
+<p>Of course, the natural question is how do we know how to adjust the scalar <span class="math inline">\(\lambda\)</span>, given our existing value? Should it be increased or decreased? One very useful algorithm is <em>gradient descent</em> (GD), which I will focus on in the remainder of this section. Briefly, the basics of GD are:</p>
+<ol style="list-style-type: decimal">
+<li>Take a (random) starting solution to your model</li>
+<li>Calculate the gradient (i.e. the k-length vector of derivatives) of the loss at that point</li>
+<li>If the gradient is positive (negative), decrease (increase) your parameter by the gradient value.</li>
+<li>Repeat 1-3 until you converge on a stable solution.</li>
+</ol>
+<p>Consider a quadratic curve in two-dimensions, as in Figure <a href="positive-definite-matrices.html#fig:gd">9.1</a>. If the gradient at a given point is positive, then we know we are on the righthand slope. To move closer to the minimum point of the curve we want to go left, so we move in the negative direction. If the gradient is negative, we are on the lefthand slope and want to move in the positive direction. After every shift I can recalculate the gradient and keep adjusting. Crucially, these movements are dictated by the absolute size of the gradient. Hence, as I approach the minimum point of the curve, the gradient and therefore the movements will be smaller. In <a href="positive-definite-matrices.html#fig:gd">9.1</a>, we see that each iteration involves not only a move towards the global minima, but also that the movements get smaller with each iteration.</p>
+<div class="figure"><span id="fig:gd"></span>
+<img src="images/sgd.png" alt="Gradient descent procedure in two dimensions." width="100%" />
+<p class="caption">
+Figure 9.1: Gradient descent procedure in two dimensions.
+</p>
+</div>
+<p>PD matrices are like the parabola above. Geometrically, they are bowl-shaped and are guaranteed to have a global minimum.<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> Consider rolling a ball on the inside surface of this bowl. It would run up and down the edges (losing height each time) before eventually resting on the bottom of the bowl, i.e. converging on the global minimum. Our algorithm is therefore bound to find the global minimum, and this is obviously a very useful property from an optimisation perspective.</p>
+<p>If a matrix is PSD, on the other hand, we are not guaranteed to converge on a global minima. PSD matrices have “saddle points” where the slope is zero in all directions, but are neither (local) minima or maxima in all dimensions. Geometrically, for example, PSD matrices can look like hyperbolic parabaloids (shaped like a Pringles crisp). While there is a point on the surface that is flat in all dimensions, it may be a minima in one dimension, but a maxima in another.</p>
+<p>PSD matrices prove more difficult to optimise because we are not guaranteed to converge on that point. At a point just away from the saddle point, we may actually want to move in opposite direction to the gradient dependent on the axis. In other words, the valence of the individual elements of the gradient vector point in different directions. Again, imagine dropping a ball onto the surface of a hyperbolic parabaloid. The ball is likely to pass the saddle point then run off one of the sides: gravity is pulling it down in to a minima in one dimension, but away from a maxima in another. PSD matrices therefore prove trickier to optimise, and can even mean we do not converge on a miniimum loss value. Therefore our stable of basic algorithms like GD like gradient descent are less likely to be effective optimisers.</p>
+</div>
+<div id="recap" class="section level3">
+<h3><span class="header-section-number">9.3.3</span> Recap</h3>
+<p>In this final section, we have covered two applications of positive (semi-) definiteness: the proof of OLS as BLUE, and the ease of optimisation when a matrix is PD. There is clearly far more that can be discussed with respect to P(S)D matrices, and this chapter links or cites various resources that can be used to go further.</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-horn_2013">
+<p>Horn, Roger A. Horn, and Charles R. Johnson. 2013. <em>Matrix Analysis</em>. 2nd edition. NY, USA.</p>
+</div>
+<div id="ref-Wooldridge_intro">
+<p>Wooldridge, Jeffrey M. 2013. <em>Introductory Econometrics : A Modern Approach</em>. 5th edition. Mason, OH.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="9">
+<li id="fn9"><p>This short proof is taken from <a href="https://www.reddit.com/r/math/comments/9ni2x/why_does_symmetry_and_idempotence_imply">this discussion</a>.<a href="positive-definite-matrices.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>See these <a href="https://www.cis.upenn.edu/~cis515/cis515-12-sl14.pdf">UPenn lecture notes</a> for more details.<a href="positive-definite-matrices.html#fnref10" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="frisch.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/10-pd-matrices.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["10EconometricTheorems.pdf", "10EconometricTheorems.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

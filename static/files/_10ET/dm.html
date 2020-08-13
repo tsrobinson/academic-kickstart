@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Delta Method | 10 Fundamental Theorems for Econometrics</title>
+  <meta name="description" content="This book walks through the ten most important statistical theorems as highlighted by Jeffrey Wooldridge, presenting intuiitions, proofs, and applications." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Delta Method | 10 Fundamental Theorems for Econometrics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book walks through the ten most important statistical theorems as highlighted by Jeffrey Wooldridge, presenting intuiitions, proofs, and applications." />
+  <meta name="github-repo" content="tsrobinson/10EconTheorems" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Delta Method | 10 Fundamental Theorems for Econometrics" />
+  
+  <meta name="twitter:description" content="This book walks through the ten most important statistical theorems as highlighted by Jeffrey Wooldridge, presenting intuiitions, proofs, and applications." />
+  
+
+<meta name="author" content="Thomas S. Robinson  (https://ts-robinson.com)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="big-op-and-little-op.html"/>
+<link rel="next" href="frisch.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">10 Fundamental Theorems for Econometrics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#version-notes"><i class="fa fa-check"></i>Version notes</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="exp-theorems.html"><a href="exp-theorems.html"><i class="fa fa-check"></i><b>1</b> Expectation Theorems</a><ul>
+<li class="chapter" data-level="1.1" data-path="exp-theorems.html"><a href="exp-theorems.html#law-of-iterated-expectations"><i class="fa fa-check"></i><b>1.1</b> Law of Iterated Expectations</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-lie"><i class="fa fa-check"></i><b>1.1.1</b> Proof of LIE</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="exp-theorems.html"><a href="exp-theorems.html#law-of-total-variance"><i class="fa fa-check"></i><b>1.2</b> Law of Total Variance</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-ltv"><i class="fa fa-check"></i><b>1.2.1</b> Proof of LTV</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="exp-theorems.html"><a href="exp-theorems.html#linearity-of-expectations"><i class="fa fa-check"></i><b>1.3</b> Linearity of Expectations</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-loe"><i class="fa fa-check"></i><b>1.3.1</b> Proof of LOE</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="exp-theorems.html"><a href="exp-theorems.html#variance-of-a-sum"><i class="fa fa-check"></i><b>1.4</b> Variance of a Sum</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-vos-x-y-are-independent"><i class="fa fa-check"></i><b>1.4.1</b> Proof of VoS: <span class="math inline">\(X, Y\)</span> are independent</a></li>
+<li class="chapter" data-level="1.4.2" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-vos-x-y-are-dependent"><i class="fa fa-check"></i><b>1.4.2</b> Proof of VoS: <span class="math inline">\(X, Y\)</span> are dependent</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exp-ineq.html"><a href="exp-ineq.html"><i class="fa fa-check"></i><b>2</b> Inequalities involving expectations</a><ul>
+<li class="chapter" data-level="2.1" data-path="exp-ineq.html"><a href="exp-ineq.html#jensens-inequality"><i class="fa fa-check"></i><b>2.1</b> Jensen’s Inequality</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="exp-ineq.html"><a href="exp-ineq.html#convex-functions"><i class="fa fa-check"></i><b>2.1.1</b> Convex functions</a></li>
+<li class="chapter" data-level="2.1.2" data-path="exp-ineq.html"><a href="exp-ineq.html#the-inequality"><i class="fa fa-check"></i><b>2.1.2</b> The Inequality</a></li>
+<li class="chapter" data-level="2.1.3" data-path="exp-ineq.html"><a href="exp-ineq.html#proof_ji"><i class="fa fa-check"></i><b>2.1.3</b> Proof</a></li>
+<li class="chapter" data-level="2.1.4" data-path="exp-ineq.html"><a href="exp-ineq.html#application"><i class="fa fa-check"></i><b>2.1.4</b> Application</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="exp-ineq.html"><a href="exp-ineq.html#chebyshevs-inequality"><i class="fa fa-check"></i><b>2.2</b> Chebyshev’s Inequality</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="exp-ineq.html"><a href="exp-ineq.html#proof"><i class="fa fa-check"></i><b>2.2.1</b> Proof</a></li>
+<li class="chapter" data-level="2.2.2" data-path="exp-ineq.html"><a href="exp-ineq.html#applications"><i class="fa fa-check"></i><b>2.2.2</b> Applications</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="linear-projection.html"><a href="linear-projection.html"><i class="fa fa-check"></i><b>3</b> Linear Projection</a><ul>
+<li class="chapter" data-level="3.1" data-path="linear-projection.html"><a href="linear-projection.html#proj_def"><i class="fa fa-check"></i><b>3.1</b> Projection</a></li>
+<li class="chapter" data-level="3.2" data-path="linear-projection.html"><a href="linear-projection.html#proj_prop"><i class="fa fa-check"></i><b>3.2</b> Properties of the projection matrix</a></li>
+<li class="chapter" data-level="3.3" data-path="linear-projection.html"><a href="linear-projection.html#lp_lr"><i class="fa fa-check"></i><b>3.3</b> Linear regression</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="linear-projection.html"><a href="linear-projection.html#geometric-interpretation"><i class="fa fa-check"></i><b>3.3.1</b> Geometric interpretation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wlln.html"><a href="wlln.html"><i class="fa fa-check"></i><b>4</b> Weak Law of Large Numbers and Central Limit Theorem</a><ul>
+<li class="chapter" data-level="4.1" data-path="wlln.html"><a href="wlln.html#weak-law-of-large-numbers"><i class="fa fa-check"></i><b>4.1</b> Weak Law of Large Numbers</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="wlln.html"><a href="wlln.html#theorem-in-plain-english"><i class="fa fa-check"></i><b>4.1.1</b> Theorem in Plain English</a></li>
+<li class="chapter" data-level="4.1.2" data-path="wlln.html"><a href="wlln.html#proof_wlln"><i class="fa fa-check"></i><b>4.1.2</b> Proof</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="wlln.html"><a href="wlln.html#clt"><i class="fa fa-check"></i><b>4.2</b> Central Limit Theorem</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="wlln.html"><a href="wlln.html#theorem-in-plain-english-1"><i class="fa fa-check"></i><b>4.2.1</b> Theorem in Plain English</a></li>
+<li class="chapter" data-level="4.2.2" data-path="wlln.html"><a href="wlln.html#primer-characteristic-functions"><i class="fa fa-check"></i><b>4.2.2</b> Primer: Characteristic Functions</a></li>
+<li class="chapter" data-level="4.2.3" data-path="wlln.html"><a href="wlln.html#proof-of-clt"><i class="fa fa-check"></i><b>4.2.3</b> Proof of CLT</a></li>
+<li class="chapter" data-level="4.2.4" data-path="wlln.html"><a href="wlln.html#generalising-clt"><i class="fa fa-check"></i><b>4.2.4</b> Generalising CLT</a></li>
+<li class="chapter" data-level="4.2.5" data-path="wlln.html"><a href="wlln.html#limitation-of-clt-and-the-importance-of-wlln"><i class="fa fa-check"></i><b>4.2.5</b> Limitation of CLT (and the importance of WLLN)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="slutsky.html"><a href="slutsky.html"><i class="fa fa-check"></i><b>5</b> Slutsky’s Theorem</a><ul>
+<li class="chapter" data-level="5.1" data-path="slutsky.html"><a href="slutsky.html#theorem_slutsky"><i class="fa fa-check"></i><b>5.1</b> Theorem in plain English</a></li>
+<li class="chapter" data-level="5.2" data-path="slutsky.html"><a href="slutsky.html#coded-demonstration"><i class="fa fa-check"></i><b>5.2</b> Coded demonstration</a></li>
+<li class="chapter" data-level="5.3" data-path="slutsky.html"><a href="slutsky.html#proof-of-slutskys-theorem"><i class="fa fa-check"></i><b>5.3</b> Proof of Slutsky’s Theorem</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="slutsky.html"><a href="slutsky.html#cmt"><i class="fa fa-check"></i><b>5.3.1</b> CMT</a></li>
+<li class="chapter" data-level="5.3.2" data-path="slutsky.html"><a href="slutsky.html#proof-using-cmt"><i class="fa fa-check"></i><b>5.3.2</b> Proof using CMT</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="slutsky.html"><a href="slutsky.html#applications_slutsky"><i class="fa fa-check"></i><b>5.4</b> Applications</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="slutsky.html"><a href="slutsky.html#proving-the-consistency-of-sample-variance-and-the-normality-of-the-t-statistic"><i class="fa fa-check"></i><b>5.4.1</b> Proving the consistency of sample variance, and the normality of the t-statistic</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html"><i class="fa fa-check"></i><b>6</b> Big Op and little op</a><ul>
+<li class="chapter" data-level="6.1" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#stochastic-order-notation"><i class="fa fa-check"></i><b>6.1</b> Stochastic order notation</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#relationship-of-big-o-and-little-o"><i class="fa fa-check"></i><b>6.1.1</b> Relationship of big-O and little-o</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#notational-shorthand-and-arithmetic-properties"><i class="fa fa-check"></i><b>6.2</b> Notational shorthand and ``arithmetic" properties</a></li>
+<li class="chapter" data-level="6.3" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#why-is-this-usefulfn_cite1"><i class="fa fa-check"></i><b>6.3</b> Why is this useful?</a></li>
+<li class="chapter" data-level="6.4" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#estimator_consistency"><i class="fa fa-check"></i><b>6.4</b> Worked Example: Consistency of mean estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="dm.html"><a href="dm.html"><i class="fa fa-check"></i><b>7</b> Delta Method</a><ul>
+<li class="chapter" data-level="7.1" data-path="dm.html"><a href="dm.html#delta-method-in-plain-english"><i class="fa fa-check"></i><b>7.1</b> Delta Method in Plain English</a></li>
+<li class="chapter" data-level="7.2" data-path="dm.html"><a href="dm.html#proof_dm"><i class="fa fa-check"></i><b>7.2</b> Proof</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="dm.html"><a href="dm.html#taylors-series-and-theorem"><i class="fa fa-check"></i><b>7.2.1</b> Taylor’s Series and Theorem</a></li>
+<li class="chapter" data-level="7.2.2" data-path="dm.html"><a href="dm.html#proof-of-delta-method"><i class="fa fa-check"></i><b>7.2.2</b> Proof of Delta Method</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="dm.html"><a href="dm.html#applied-example"><i class="fa fa-check"></i><b>7.3</b> Applied example</a></li>
+<li class="chapter" data-level="7.4" data-path="dm.html"><a href="dm.html#alternative-strategies"><i class="fa fa-check"></i><b>7.4</b> Alternative strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="frisch.html"><a href="frisch.html"><i class="fa fa-check"></i><b>8</b> Frisch-Waugh-Lovell Theorem</a><ul>
+<li class="chapter" data-level="8.1" data-path="wlln.html"><a href="wlln.html#theorem-in-plain-english"><i class="fa fa-check"></i><b>8.1</b> Theorem in plain English</a></li>
+<li class="chapter" data-level="8.2" data-path="frisch.html"><a href="frisch.html#proof_fw"><i class="fa fa-check"></i><b>8.2</b> Proof</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="frisch.html"><a href="frisch.html#primer-projection-matricessecnote"><i class="fa fa-check"></i><b>8.2.1</b> Primer: Projection matrices</a></li>
+<li class="chapter" data-level="8.2.2" data-path="frisch.html"><a href="frisch.html#fwl-proof-secnote2"><i class="fa fa-check"></i><b>8.2.2</b> FWL Proof</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="frisch.html"><a href="frisch.html#coded-example"><i class="fa fa-check"></i><b>8.3</b> Coded example</a></li>
+<li class="chapter" data-level="8.4" data-path="frisch.html"><a href="frisch.html#application-sensitivity-analysis"><i class="fa fa-check"></i><b>8.4</b> Application: Sensitivity analysis</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="frisch.html"><a href="frisch.html#regressing-the-partialled-out-x-on-the-full-y"><i class="fa fa-check"></i><b>8.4.1</b> Regressing the partialled-out X on the full Y</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="pd.html"><a href="pd.html"><i class="fa fa-check"></i><b>9</b> Positive Definite Matrices</a><ul>
+<li class="chapter" data-level="9.1" data-path="pd.html"><a href="pd.html#pd_terms"><i class="fa fa-check"></i><b>9.1</b> Terminology</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="pd.html"><a href="pd.html#positivity"><i class="fa fa-check"></i><b>9.1.1</b> Positivity</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="pd.html"><a href="pd.html#a-b-is-psd-iff-b-1---a-1-is-psd"><i class="fa fa-check"></i><b>9.2</b> <span class="math inline">\(A-B\)</span> is PSD iff <span class="math inline">\(B^{-1} - A^{-1}\)</span> is PSD</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="pd.html"><a href="pd.html#pd_proof"><i class="fa fa-check"></i><b>9.2.1</b> Proof</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="pd.html"><a href="pd.html#pd_app"><i class="fa fa-check"></i><b>9.3</b> Applications</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="pd.html"><a href="pd.html#ols-as-the-best-linear-unbiased-estimator-blue"><i class="fa fa-check"></i><b>9.3.1</b> OLS as the best linear unbiased estimator (BLUE)</a></li>
+<li class="chapter" data-level="9.3.2" data-path="pd.html"><a href="pd.html#optimisation-problems"><i class="fa fa-check"></i><b>9.3.2</b> Optimisation problems</a></li>
+<li class="chapter" data-level="9.3.3" data-path="pd.html"><a href="pd.html#recap"><i class="fa fa-check"></i><b>9.3.3</b> Recap</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">10 Fundamental Theorems for Econometrics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="dm" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Delta Method</h1>
+<div id="delta-method-in-plain-english" class="section level2">
+<h2><span class="header-section-number">7.1</span> Delta Method in Plain English</h2>
+<p>The Delta Method (DM) states that we can approximate the asymptotic behaviour of functions over a random variable, if the random variable is itself asymptotically normal. In practice, this theorem tells us that even if we do not know the expected value and variance of the function <span class="math inline">\(g(X)\)</span> we can still approximate it reasonably. Note that by <a href="wlln.html#clt">Central Limit Theorem</a> we know that several important random variables and estimators are asymptotically normal, including the sample mean. We can therefore approximate the mean and variance of some transformation of the sample mean using its variance.</p>
+<p>More specifically, suppose that we have some sequence of random variables <span class="math inline">\(X_n\)</span>, such that as <span class="math inline">\(n\to\infty\)</span></p>
+<p><span class="math display">\[
+X_n \sim N(\mu,\frac{\sigma^2}{n}).
+\]</span></p>
+<p>We can rearrange this statement, to capture that the difference between the random variable and some constant <span class="math inline">\(\mu\)</span> converges to a normal distribution around zero, with a variance determined by the number of observations:<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
+<p><span class="math display">\[
+(X_n - \mu) \sim N(0, \frac{\sigma^2}{n}).
+\]</span></p>
+<p>Further rearrangement yields</p>
+<p><span class="math display">\[
+\begin{aligned}
+(X_n - \mu) &amp;\sim \frac{\sigma}{\sqrt{n}}N(0,1) \\
+\frac{\sqrt{n}(X_n - \mu)}{\sigma} &amp;\sim N(0,1),
+\end{aligned}
+\]</span>
+by first moving the finite variance and <span class="math inline">\(n\)</span> terms outside of the normal distribution, and then dividing through.</p>
+<p>Given this, if <span class="math inline">\(g\)</span> is some smooth function (i.e. there are no discontinuous jumps in values) then the Delta Method states that:</p>
+<p><span class="math display">\[
+\frac{\sqrt{n}(g(X_n) - g(\mu))}{|g&#39;(\mu)|\sigma} \approx N(0,1),
+\]</span></p>
+<p>where <span class="math inline">\(g&#39;\)</span> is the first derivative of <span class="math inline">\(g\)</span>. Rearranging again, we can see that</p>
+<p><span class="math display">\[
+g(X_n) \approx N\left(g(\mu), \frac{g&#39;(\mu)^2\sigma^2}{n}\right).
+\]</span></p>
+<p>Note that the statement above is an approximation because <span class="math inline">\(g(X_n) = g(\mu) + g&#39;(\mu)(\hat{\mu-\mu} + g&#39;&#39;(\mu)\frac{(X_n - \mu)^2}{2!}+...\)</span>, i.e. an infinite sum. The Delta Method avoids the infinite regress by ignoring higher order terms <span class="citation">(Liu <a href="#ref-liu_2012" role="doc-biblioref">2012</a>)</span>. I return to this point below in the proof.</p>
+<p>DM also generalizes to multidimensional functions, where instead of converging on the standard normal the random variable must converge in distribution to a multivariate normal, and the derivatives of <span class="math inline">\(g\)</span> are replaced with the gradient of g (a vector of all partial derivatives).[^fn_gradient] For the sake of simplicity I do not prove this result here, and instead focus on the univariate case.</p>
+<p><span class="math display">\[ 
+   \begin{aligned}
+    \nabla g &amp;= \begin{bmatrix}
+           \frac{dg}{dx_1} \\
+           \frac{dg}{dx_2} \\
+           \vdots \\
+           \frac{dg}{dx_n}
+         \end{bmatrix}
+  \end{aligned}
+   \]</span></p>
+</div>
+<div id="proof_dm" class="section level2">
+<h2><span class="header-section-number">7.2</span> Proof</h2>
+<p>Before offering a full proof, we need to know a little bit about Taylor Series and Taylor’s Theorem. I briefly outline this concept here, then show how this expansion helps to prove DM.</p>
+<div id="taylors-series-and-theorem" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> Taylor’s Series and Theorem</h3>
+<p>Suppose we have some continuous function <span class="math inline">\(g\)</span> that is infinitely differentiable. By that, we mean that we mean some function that is continuous over a domain, and for which there is always some further derivative of the function. Consider the case <span class="math inline">\(g(x) = e^{2x}\)</span>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+g&#39;(x) &amp;= 2e^{2x} \\
+g&#39;&#39;(x) &amp;= 4e^{2x} \\
+g&#39;&#39;&#39;(x) &amp;= 8e^{2x} \\
+g&#39;&#39;&#39;&#39;(x) &amp;= 16e^{2x} \\
+...
+\end{aligned}
+\]</span>
+For any integer <span class="math inline">\(k\)</span>, the <span class="math inline">\(k\)</span>th derivative of <span class="math inline">\(g(x)\)</span> is defined. An interesting non-infinitely differentiable function would be <span class="math inline">\(g(x) = |x|\)</span> where <span class="math inline">\(-\infty &lt; x &lt; \infty\)</span>. Here note that when <span class="math inline">\(x &gt; 0\)</span>, the first order derivative is 1 (the function is equivalent to <span class="math inline">\(x\)</span>), and similarly at <span class="math inline">\(x &lt;0\)</span>, the first order derivative is -1 (the function is equivalent to <span class="math inline">\(-x\)</span>). When <span class="math inline">\(x = 0\)</span>, however, the first derivative is undefined – the first derivative jumps discontinuously.</p>
+<p>The Taylor Series for an infinitely differentiable function at a given point <span class="math inline">\(x=p\)</span> is an expansion of that function in terms of an infinite sum:</p>
+<p><span class="math display">\[
+g(x) = g(p) + g&#39;(p)(x-p) + \frac{g&#39;&#39;(p)}{2!}(x-p)^2 + \frac{g&#39;&#39;&#39;(p)}{3!}(x-p)^3 + ...
+\]</span></p>
+<p>Taylor Series are useful because they allow us to approximate a function at a lower polynomial order, using Taylor’s Theorem. This Theorem loosely states that, for a given point <span class="math inline">\(x=p\)</span>, we can approximate a continuous and k-times differentiable function to the <span class="math inline">\(j\)</span>th order using the Taylor Series up to the <span class="math inline">\(j\)</span>th derivative. In other words, if we have some continuous differentiable function <span class="math inline">\(g(x)\)</span>, its first-order approximation (i.e. its linear approximation) at point <span class="math inline">\(p\)</span> is defined as</p>
+<p><span class="math display">\[g(p) + g&#39;(p)(x-p).\]</span></p>
+<p>To make this more concrete, consider the function <span class="math inline">\(g(x) = e^x\)</span>. The Taylor Series expansion of <span class="math inline">\(g\)</span> at point <span class="math inline">\(x=0\)</span> is</p>
+<p><span class="math display">\[g(x) = g(0) + g&#39;(0)(x-0) +  \frac{g&#39;&#39;(0)}{2!}(x-0)^2 + \frac{g&#39;&#39;&#39;(0)}{3!}(x-0)^3 + ...\]</span></p>
+<p>So up to the first order, Taylors Theorem states that</p>
+<p><span class="math inline">\(g(x) \approx g(0)+g&#39;(0)(x-0) = 1 + x,\)</span></p>
+<p>which is the line tangent to <span class="math inline">\(e^x\)</span> at <span class="math inline">\(x=0\)</span>. If we consider up to the second order (the quadratic approximation) our fit would be better, and even more so if we included the third, fourth, fifth orders and so on, up until the <span class="math inline">\(\infty\)</span>th order – at which point the Taylor Approximation is the function precisely.</p>
+</div>
+<div id="proof-of-delta-method" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> Proof of Delta Method</h3>
+<p>Given Taylor’s Theorem, we know that so long as <span class="math inline">\(g\)</span> is a continuous and derivable up to the <span class="math inline">\(k\)</span>th derivative, where <span class="math inline">\(k \geq 2\)</span>, then at the point <span class="math inline">\(\mu\)</span>:</p>
+<p><span class="math display">\[ g(X_n) \approx g(\mu) + g&#39;(\mu)(X_n-\mu). \]</span></p>
+<p>Subtracting <span class="math inline">\(g(\mu)\)</span> we have:</p>
+<p><span class="math display">\[
+\left(g(X_n) - g(\mu)\right) \approx g&#39;(\mu)(X_n-\mu).
+\]</span>
+We know by CLT and our assumptions regarding <span class="math inline">\(X_n\)</span> that <span class="math inline">\((X_n-\mu) \xrightarrow{d} N(0,\frac{\sigma^2}{n})\)</span>. Therefore we can rewrite the above as</p>
+<p><span class="math display">\[
+\left(g(X_n) - g(\mu)\right) \approx g&#39;(\mu)N(0,\frac{\sigma^2}{n}),
+\]</span></p>
+<p>Hence, by the properties of normal distributions (multiplying by a constant, adding a constant):</p>
+<p><span class="math display">\[
+g(X_n) \approx N\left(g(\mu),\frac{g&#39;(\mu)^2\sigma^2}{n}\right) \;\;\; \square
+\]</span></p>
+</div>
+</div>
+<div id="applied-example" class="section level2">
+<h2><span class="header-section-number">7.3</span> Applied example</h2>
+<p><span class="citation">Bowler, Donovan, and Karp (<a href="#ref-bowleretal_2006" role="doc-biblioref">2006</a>)</span> use the DM to provide confidence intervals for predicted probabilities generated from a logistic regression. Their study involves surveying politicians’ attitudes toward electoral rule changes. They estimate a logistic model of the support for change on various features of the politicians including whether they won under existing electoral rules or not. To understand how winning under existing rules affects attitudes, they then generate the predicted probabilities for losers and winners separately.</p>
+<p>Generating predicted probabilities from a linear regression involves a non-linear transformation of an asymptotically normal parameter (the logistic coefficient), and therefore we must take account of this transformation when variance of the predicted probability.</p>
+<p>To generate the predicted probability we use the equation</p>
+<p><span class="math display">\[
+\hat{p} = \frac{e^{(\hat{\alpha} + \hat{\beta}_1X_1 +...+\beta_nX_n)}}{1+e^{(\hat{\alpha} + \hat{\beta}_1X_1 + ...+\hat{\beta}_nX_n)}},
+\]</span></p>
+<p>where <span class="math inline">\(\hat{p}\)</span> is the predicted probability. Estimating the variance around the predicted probability is therefore quite difficult – it involves multiple estimators, and non-linear transformations. But we do know that, assuming i.i.d and correct functional form, the estimating error of the logistic equation is asymptotically multivariate normal on the origin. And so the authors can use DM to calculate 95 percent confidence intervals. In general, the delta method is a useful way of estimating standard and errors and confidence intervals when using (but not limited to) logistic regression and other models involving non-linear transformations of model parameters.</p>
+</div>
+<div id="alternative-strategies" class="section level2">
+<h2><span class="header-section-number">7.4</span> Alternative strategies</h2>
+<p>The appeal of the delta method is that it gives an analytic approximation of a function’s distribution, using the asymptotic properties of some more (model) parameter. But there are alternative methods to approximating these distributions (and thus standard errors) that do not rely on deriving the order conditions of that function.</p>
+<p>One obvious alternative is the bootstrap. For a given transformation of a random variable, calculate the output of the function <span class="math inline">\(B\)</span> times using samples of the same size as the original sample, but with replacement and take either the standard deviation or the <span class="math inline">\(a\)</span> and <span class="math inline">\(1-a\)</span> percentiles of the resultant parameter distribution. This method does not require the user to calculate the derivative of a function. It is a non-parametric alternative that simply approximates the distribution itself, rather than approximates the parameters of a parametric distribution.</p>
+<p>The bootstrap is computationally more intensive (requiring <span class="math inline">\(B\)</span> separate samples and calculations etc.) but, on the other hand, is less technical to calculate. Moreover, the Delta Method’s approximation is limited analytically by the number of terms considered in the Taylor Series expansion. While the first order Taylor Theorem may be reasonable, it may be imprecise. To improve the precision one has to undertake to find the second, third, fourth etc. order terms (which may be analytically difficult). With bootstrapping, however, you can improve precision simply by taking more samples (increasing <span class="math inline">\(B\)</span>) <span class="citation">(King, Tomz, and Wittenberg <a href="#ref-KinTomWit00" role="doc-biblioref">2000</a>)</span>.</p>
+<p>Given the ease with which we can acquire and deploy computational resources now, perhaps the delta method is no longer as useful in applied research. But the proof and asymptotic implications remain statistically interesting and worth knowing.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-bowleretal_2006">
+<p>Bowler, Shaun, Todd Donovan, and Jeffrey A. Karp. 2006. “Why Politicians Like Electoral Institutions: Self-Interest, Values, or Ideology?” <em>The Journal of Politics</em> 68 (2): 434–46. <a href="https://doi.org/10.1111/j.1468-2508.2006.00418.x">https://doi.org/10.1111/j.1468-2508.2006.00418.x</a>.</p>
+</div>
+<div id="ref-KinTomWit00">
+<p>King, Gary, Michael Tomz, and Jason Wittenberg. 2000. “Making the Most of Statistical Analyses: Improving Interpretation and Presentation.” <em>American Journal of Political Science</em> 44: 341355. <a href="http://gking.harvard.edu/files/abs/making-abs.shtml">http://gking.harvard.edu/files/abs/making-abs.shtml</a>.</p>
+</div>
+<div id="ref-liu_2012">
+<p>Liu, Xian. 2012. “Appendix a: The Delta Method.” In <em>Survival Analysis</em>, 405–6. John Wiley &amp; Sons, Ltd. <a href="https://doi.org/10.1002/9781118307656.app1">https://doi.org/10.1002/9781118307656.app1</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="9">
+<li id="fn9"><p>There are clear parallels here to how we expressed <a href="%7B#estimator_consistency%7D%20in%20the%20previous%20chapter">estimator consistency</a>.<a href="dm.html#fnref9" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="big-op-and-little-op.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="frisch.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/08-delta-method.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["10EconometricTheorems.pdf", "10EconometricTheorems.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

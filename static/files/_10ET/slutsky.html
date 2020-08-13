@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Slutsky’s Theorem | 10 Fundamental Theorems for Econometrics</title>
+  <meta name="description" content="This book walks through the ten most important statistical theorems as highlighted by Jeffrey Wooldridge, presenting intuiitions, proofs, and applications." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Slutsky’s Theorem | 10 Fundamental Theorems for Econometrics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book walks through the ten most important statistical theorems as highlighted by Jeffrey Wooldridge, presenting intuiitions, proofs, and applications." />
+  <meta name="github-repo" content="tsrobinson/10EconTheorems" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Slutsky’s Theorem | 10 Fundamental Theorems for Econometrics" />
+  
+  <meta name="twitter:description" content="This book walks through the ten most important statistical theorems as highlighted by Jeffrey Wooldridge, presenting intuiitions, proofs, and applications." />
+  
+
+<meta name="author" content="Thomas S. Robinson  (https://ts-robinson.com)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="wlln.html"/>
+<link rel="next" href="big-op-and-little-op.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">10 Fundamental Theorems for Econometrics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#version-notes"><i class="fa fa-check"></i>Version notes</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="exp-theorems.html"><a href="exp-theorems.html"><i class="fa fa-check"></i><b>1</b> Expectation Theorems</a><ul>
+<li class="chapter" data-level="1.1" data-path="exp-theorems.html"><a href="exp-theorems.html#law-of-iterated-expectations"><i class="fa fa-check"></i><b>1.1</b> Law of Iterated Expectations</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-lie"><i class="fa fa-check"></i><b>1.1.1</b> Proof of LIE</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="exp-theorems.html"><a href="exp-theorems.html#law-of-total-variance"><i class="fa fa-check"></i><b>1.2</b> Law of Total Variance</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-ltv"><i class="fa fa-check"></i><b>1.2.1</b> Proof of LTV</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="exp-theorems.html"><a href="exp-theorems.html#linearity-of-expectations"><i class="fa fa-check"></i><b>1.3</b> Linearity of Expectations</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-loe"><i class="fa fa-check"></i><b>1.3.1</b> Proof of LOE</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="exp-theorems.html"><a href="exp-theorems.html#variance-of-a-sum"><i class="fa fa-check"></i><b>1.4</b> Variance of a Sum</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-vos-x-y-are-independent"><i class="fa fa-check"></i><b>1.4.1</b> Proof of VoS: <span class="math inline">\(X, Y\)</span> are independent</a></li>
+<li class="chapter" data-level="1.4.2" data-path="exp-theorems.html"><a href="exp-theorems.html#proof-of-vos-x-y-are-dependent"><i class="fa fa-check"></i><b>1.4.2</b> Proof of VoS: <span class="math inline">\(X, Y\)</span> are dependent</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exp-ineq.html"><a href="exp-ineq.html"><i class="fa fa-check"></i><b>2</b> Inequalities involving expectations</a><ul>
+<li class="chapter" data-level="2.1" data-path="exp-ineq.html"><a href="exp-ineq.html#jensens-inequality"><i class="fa fa-check"></i><b>2.1</b> Jensen’s Inequality</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="exp-ineq.html"><a href="exp-ineq.html#convex-functions"><i class="fa fa-check"></i><b>2.1.1</b> Convex functions</a></li>
+<li class="chapter" data-level="2.1.2" data-path="exp-ineq.html"><a href="exp-ineq.html#the-inequality"><i class="fa fa-check"></i><b>2.1.2</b> The Inequality</a></li>
+<li class="chapter" data-level="2.1.3" data-path="exp-ineq.html"><a href="exp-ineq.html#proof_ji"><i class="fa fa-check"></i><b>2.1.3</b> Proof</a></li>
+<li class="chapter" data-level="2.1.4" data-path="exp-ineq.html"><a href="exp-ineq.html#application"><i class="fa fa-check"></i><b>2.1.4</b> Application</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="exp-ineq.html"><a href="exp-ineq.html#chebyshevs-inequality"><i class="fa fa-check"></i><b>2.2</b> Chebyshev’s Inequality</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="exp-ineq.html"><a href="exp-ineq.html#proof"><i class="fa fa-check"></i><b>2.2.1</b> Proof</a></li>
+<li class="chapter" data-level="2.2.2" data-path="exp-ineq.html"><a href="exp-ineq.html#applications"><i class="fa fa-check"></i><b>2.2.2</b> Applications</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="linear-projection.html"><a href="linear-projection.html"><i class="fa fa-check"></i><b>3</b> Linear Projection</a><ul>
+<li class="chapter" data-level="3.1" data-path="linear-projection.html"><a href="linear-projection.html#proj_def"><i class="fa fa-check"></i><b>3.1</b> Projection</a></li>
+<li class="chapter" data-level="3.2" data-path="linear-projection.html"><a href="linear-projection.html#proj_prop"><i class="fa fa-check"></i><b>3.2</b> Properties of the projection matrix</a></li>
+<li class="chapter" data-level="3.3" data-path="linear-projection.html"><a href="linear-projection.html#lp_lr"><i class="fa fa-check"></i><b>3.3</b> Linear regression</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="linear-projection.html"><a href="linear-projection.html#geometric-interpretation"><i class="fa fa-check"></i><b>3.3.1</b> Geometric interpretation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wlln.html"><a href="wlln.html"><i class="fa fa-check"></i><b>4</b> Weak Law of Large Numbers and Central Limit Theorem</a><ul>
+<li class="chapter" data-level="4.1" data-path="wlln.html"><a href="wlln.html#weak-law-of-large-numbers"><i class="fa fa-check"></i><b>4.1</b> Weak Law of Large Numbers</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="wlln.html"><a href="wlln.html#theorem-in-plain-english"><i class="fa fa-check"></i><b>4.1.1</b> Theorem in Plain English</a></li>
+<li class="chapter" data-level="4.1.2" data-path="wlln.html"><a href="wlln.html#proof_wlln"><i class="fa fa-check"></i><b>4.1.2</b> Proof</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="wlln.html"><a href="wlln.html#clt"><i class="fa fa-check"></i><b>4.2</b> Central Limit Theorem</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="wlln.html"><a href="wlln.html#theorem-in-plain-english-1"><i class="fa fa-check"></i><b>4.2.1</b> Theorem in Plain English</a></li>
+<li class="chapter" data-level="4.2.2" data-path="wlln.html"><a href="wlln.html#primer-characteristic-functions"><i class="fa fa-check"></i><b>4.2.2</b> Primer: Characteristic Functions</a></li>
+<li class="chapter" data-level="4.2.3" data-path="wlln.html"><a href="wlln.html#proof-of-clt"><i class="fa fa-check"></i><b>4.2.3</b> Proof of CLT</a></li>
+<li class="chapter" data-level="4.2.4" data-path="wlln.html"><a href="wlln.html#generalising-clt"><i class="fa fa-check"></i><b>4.2.4</b> Generalising CLT</a></li>
+<li class="chapter" data-level="4.2.5" data-path="wlln.html"><a href="wlln.html#limitation-of-clt-and-the-importance-of-wlln"><i class="fa fa-check"></i><b>4.2.5</b> Limitation of CLT (and the importance of WLLN)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="slutsky.html"><a href="slutsky.html"><i class="fa fa-check"></i><b>5</b> Slutsky’s Theorem</a><ul>
+<li class="chapter" data-level="5.1" data-path="slutsky.html"><a href="slutsky.html#theorem_slutsky"><i class="fa fa-check"></i><b>5.1</b> Theorem in plain English</a></li>
+<li class="chapter" data-level="5.2" data-path="slutsky.html"><a href="slutsky.html#coded-demonstration"><i class="fa fa-check"></i><b>5.2</b> Coded demonstration</a></li>
+<li class="chapter" data-level="5.3" data-path="slutsky.html"><a href="slutsky.html#proof-of-slutskys-theorem"><i class="fa fa-check"></i><b>5.3</b> Proof of Slutsky’s Theorem</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="slutsky.html"><a href="slutsky.html#cmt"><i class="fa fa-check"></i><b>5.3.1</b> CMT</a></li>
+<li class="chapter" data-level="5.3.2" data-path="slutsky.html"><a href="slutsky.html#proof-using-cmt"><i class="fa fa-check"></i><b>5.3.2</b> Proof using CMT</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="slutsky.html"><a href="slutsky.html#applications_slutsky"><i class="fa fa-check"></i><b>5.4</b> Applications</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="slutsky.html"><a href="slutsky.html#proving-the-consistency-of-sample-variance-and-the-normality-of-the-t-statistic"><i class="fa fa-check"></i><b>5.4.1</b> Proving the consistency of sample variance, and the normality of the t-statistic</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html"><i class="fa fa-check"></i><b>6</b> Big Op and little op</a><ul>
+<li class="chapter" data-level="6.1" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#stochastic-order-notation"><i class="fa fa-check"></i><b>6.1</b> Stochastic order notation</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#relationship-of-big-o-and-little-o"><i class="fa fa-check"></i><b>6.1.1</b> Relationship of big-O and little-o</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#notational-shorthand-and-arithmetic-properties"><i class="fa fa-check"></i><b>6.2</b> Notational shorthand and ``arithmetic" properties</a></li>
+<li class="chapter" data-level="6.3" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#why-is-this-usefulfn_cite1"><i class="fa fa-check"></i><b>6.3</b> Why is this useful?</a></li>
+<li class="chapter" data-level="6.4" data-path="big-op-and-little-op.html"><a href="big-op-and-little-op.html#estimator_consistency"><i class="fa fa-check"></i><b>6.4</b> Worked Example: Consistency of mean estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="dm.html"><a href="dm.html"><i class="fa fa-check"></i><b>7</b> Delta Method</a><ul>
+<li class="chapter" data-level="7.1" data-path="dm.html"><a href="dm.html#delta-method-in-plain-english"><i class="fa fa-check"></i><b>7.1</b> Delta Method in Plain English</a></li>
+<li class="chapter" data-level="7.2" data-path="dm.html"><a href="dm.html#proof_dm"><i class="fa fa-check"></i><b>7.2</b> Proof</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="dm.html"><a href="dm.html#taylors-series-and-theorem"><i class="fa fa-check"></i><b>7.2.1</b> Taylor’s Series and Theorem</a></li>
+<li class="chapter" data-level="7.2.2" data-path="dm.html"><a href="dm.html#proof-of-delta-method"><i class="fa fa-check"></i><b>7.2.2</b> Proof of Delta Method</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="dm.html"><a href="dm.html#applied-example"><i class="fa fa-check"></i><b>7.3</b> Applied example</a></li>
+<li class="chapter" data-level="7.4" data-path="dm.html"><a href="dm.html#alternative-strategies"><i class="fa fa-check"></i><b>7.4</b> Alternative strategies</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="frisch.html"><a href="frisch.html"><i class="fa fa-check"></i><b>8</b> Frisch-Waugh-Lovell Theorem</a><ul>
+<li class="chapter" data-level="8.1" data-path="wlln.html"><a href="wlln.html#theorem-in-plain-english"><i class="fa fa-check"></i><b>8.1</b> Theorem in plain English</a></li>
+<li class="chapter" data-level="8.2" data-path="frisch.html"><a href="frisch.html#proof_fw"><i class="fa fa-check"></i><b>8.2</b> Proof</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="frisch.html"><a href="frisch.html#primer-projection-matricessecnote"><i class="fa fa-check"></i><b>8.2.1</b> Primer: Projection matrices</a></li>
+<li class="chapter" data-level="8.2.2" data-path="frisch.html"><a href="frisch.html#fwl-proof-secnote2"><i class="fa fa-check"></i><b>8.2.2</b> FWL Proof</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="frisch.html"><a href="frisch.html#coded-example"><i class="fa fa-check"></i><b>8.3</b> Coded example</a></li>
+<li class="chapter" data-level="8.4" data-path="frisch.html"><a href="frisch.html#application-sensitivity-analysis"><i class="fa fa-check"></i><b>8.4</b> Application: Sensitivity analysis</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="frisch.html"><a href="frisch.html#regressing-the-partialled-out-x-on-the-full-y"><i class="fa fa-check"></i><b>8.4.1</b> Regressing the partialled-out X on the full Y</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="pd.html"><a href="pd.html"><i class="fa fa-check"></i><b>9</b> Positive Definite Matrices</a><ul>
+<li class="chapter" data-level="9.1" data-path="pd.html"><a href="pd.html#pd_terms"><i class="fa fa-check"></i><b>9.1</b> Terminology</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="pd.html"><a href="pd.html#positivity"><i class="fa fa-check"></i><b>9.1.1</b> Positivity</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="pd.html"><a href="pd.html#a-b-is-psd-iff-b-1---a-1-is-psd"><i class="fa fa-check"></i><b>9.2</b> <span class="math inline">\(A-B\)</span> is PSD iff <span class="math inline">\(B^{-1} - A^{-1}\)</span> is PSD</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="pd.html"><a href="pd.html#pd_proof"><i class="fa fa-check"></i><b>9.2.1</b> Proof</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="pd.html"><a href="pd.html#pd_app"><i class="fa fa-check"></i><b>9.3</b> Applications</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="pd.html"><a href="pd.html#ols-as-the-best-linear-unbiased-estimator-blue"><i class="fa fa-check"></i><b>9.3.1</b> OLS as the best linear unbiased estimator (BLUE)</a></li>
+<li class="chapter" data-level="9.3.2" data-path="pd.html"><a href="pd.html#optimisation-problems"><i class="fa fa-check"></i><b>9.3.2</b> Optimisation problems</a></li>
+<li class="chapter" data-level="9.3.3" data-path="pd.html"><a href="pd.html#recap"><i class="fa fa-check"></i><b>9.3.3</b> Recap</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">10 Fundamental Theorems for Econometrics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="slutsky" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Slutsky’s Theorem</h1>
+<div id="theorem_slutsky" class="section level2">
+<h2><span class="header-section-number">5.1</span> Theorem in plain English</h2>
+<p>Slutsky’s Theorem allows us to make claims about the convergence of random variables. It states that a random variable converging to some distribution <span class="math inline">\(X\)</span>, when multiplied by a variable converging in probability on some constant <span class="math inline">\(a\)</span>, converges in distribution to <span class="math inline">\(a \times X\)</span>. Similarly, if you add the two random variables, they converge in distribution to <span class="math inline">\(a\)</span> plus <span class="math inline">\(X\)</span>. More formally, the theorem states that if <span class="math inline">\(X_n \xrightarrow{d} X\)</span> and <span class="math inline">\(A_n \xrightarrow{p}\)</span>, where <span class="math inline">\(a\)</span> is a constant, then:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(X_n + A_n \xrightarrow{d} X + a\)</span></li>
+<li><span class="math inline">\(A_nX_n \xrightarrow{d} aX\)</span></li>
+</ol>
+<p>Note that if <span class="math inline">\(A_n\)</span> or <span class="math inline">\(B_n\)</span> do not converge in probability to constants, and instead converge towards some distribution, then Slutsky’s Theorem does not hold. More trivially, if <em>all</em> variables converge in probability to constants, then <span class="math inline">\(A_nX_n + B_n \xrightarrow{p} aX+B\)</span>.</p>
+</div>
+<div id="coded-demonstration" class="section level2">
+<h2><span class="header-section-number">5.2</span> Coded demonstration</h2>
+<p>This theorem is reasonably intuitive. Suppose that the random variable <span class="math inline">\(X_n\)</span> converges in distribution to a standard normal distribution <span class="math inline">\(N(0,1)\)</span>. For part 1) of the Theorem, note that when we multiply a standard normal by a constant we “stretch” the distribution (assuming <span class="math inline">\(|a|&gt;1\)</span>, else we “compress” it). Recall from the discussion of the standard normal in <a href="wlln.html#wlln">Chapter 5</a> that <span class="math inline">\(aN(0,1) = N(0,a^2)\)</span>. As <span class="math inline">\(n\)</span> approaches infinity, therefore, by definition <span class="math inline">\(A_n \xrightarrow{p} a\)</span>, and so the degree to which the standard normal is stretched will converge to that constant too. To demonstrate this feature visually, consider the following simulation:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="slutsky.html#cb1-1"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="slutsky.html#cb1-2"></a><span class="kw">set.seed</span>(<span class="dv">89</span>)</span>
+<span id="cb1-3"><a href="slutsky.html#cb1-3"></a>N &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">25</span>,<span class="dv">1000</span>,<span class="dv">1000000</span>)</span>
+<span id="cb1-4"><a href="slutsky.html#cb1-4"></a></span>
+<span id="cb1-5"><a href="slutsky.html#cb1-5"></a>results &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">n =</span> <span class="kw">as.factor</span>(<span class="kw">levels</span>(N)),</span>
+<span id="cb1-6"><a href="slutsky.html#cb1-6"></a>                      <span class="dt">X_n =</span> <span class="kw">as.numeric</span>(),</span>
+<span id="cb1-7"><a href="slutsky.html#cb1-7"></a>                      <span class="dt">A_n =</span> <span class="kw">as.numeric</span>(),</span>
+<span id="cb1-8"><a href="slutsky.html#cb1-8"></a>                      <span class="dt">ax =</span> <span class="kw">as.numeric</span>())</span>
+<span id="cb1-9"><a href="slutsky.html#cb1-9"></a></span>
+<span id="cb1-10"><a href="slutsky.html#cb1-10"></a><span class="cf">for</span> (n <span class="cf">in</span> N) {</span>
+<span id="cb1-11"><a href="slutsky.html#cb1-11"></a>  X_n &lt;-<span class="st"> </span><span class="kw">rnorm</span>(n)</span>
+<span id="cb1-12"><a href="slutsky.html#cb1-12"></a>  A_n &lt;-<span class="st"> </span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>n)</span>
+<span id="cb1-13"><a href="slutsky.html#cb1-13"></a>  aX &lt;-<span class="st"> </span>A_n <span class="op">*</span><span class="st"> </span>X_n</span>
+<span id="cb1-14"><a href="slutsky.html#cb1-14"></a>  </span>
+<span id="cb1-15"><a href="slutsky.html#cb1-15"></a>  results &lt;-<span class="st"> </span><span class="kw">rbind</span>(results, <span class="kw">cbind</span>(n, X_n, A_n, aX))</span>
+<span id="cb1-16"><a href="slutsky.html#cb1-16"></a>  </span>
+<span id="cb1-17"><a href="slutsky.html#cb1-17"></a>}</span>
+<span id="cb1-18"><a href="slutsky.html#cb1-18"></a></span>
+<span id="cb1-19"><a href="slutsky.html#cb1-19"></a><span class="kw">ggplot</span>(results, <span class="kw">aes</span>(<span class="dt">x =</span> aX)) <span class="op">+</span></span>
+<span id="cb1-20"><a href="slutsky.html#cb1-20"></a><span class="st">  </span><span class="kw">facet_wrap</span>(n<span class="op">~</span>., <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">labeller =</span> <span class="st">&quot;label_both&quot;</span>) <span class="op">+</span></span>
+<span id="cb1-21"><a href="slutsky.html#cb1-21"></a><span class="st">  </span><span class="kw">geom_density</span>() <span class="op">+</span></span>
+<span id="cb1-22"><a href="slutsky.html#cb1-22"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;p(aX)&quot;</span>)</span></code></pre></div>
+<p><img src="10EconometricTheorems_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Here we have defined two random variables: <code>X_n</code> is a standard normal, and <code>A_n</code> converges in value to 2. Varying the value of <code>n</code>, I take <span class="math inline">\(n\)</span> draws from a standard normal distribution and calculate the value the converging constant <span class="math inline">\(A_n\)</span>. I then generate the product of these two variables. The figure plots the resulting distribution <code>aX</code>. We can see that as <code>n</code> increases, the distribution becomes increasingly normal, remains centred around 0 and the variance approaches 4 (since 95% of the curve is approximately bounded between <span class="math inline">\(0 \pm 2\times\sqrt{var(aX)} = 0 \pm 2\times2 = 0 \pm 4\)</span>).</p>
+<p>Similarly, if we add the constant <span class="math inline">\(a\)</span> to a standard distribution, the effect is to shift the distribution in its entirety (since a constant has no variance, it does not ‘’stretch’’ the distribution). As <span class="math inline">\(A_n\)</span> converges in probability, therefore, the shift converges on the constant <span class="math inline">\(a\)</span>. Again, we can demonstrate this result in R:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="slutsky.html#cb2-1"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb2-2"><a href="slutsky.html#cb2-2"></a><span class="kw">set.seed</span>(<span class="dv">89</span>)</span>
+<span id="cb2-3"><a href="slutsky.html#cb2-3"></a>N &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">25</span>,<span class="dv">1000</span>,<span class="dv">1000000</span>)</span>
+<span id="cb2-4"><a href="slutsky.html#cb2-4"></a></span>
+<span id="cb2-5"><a href="slutsky.html#cb2-5"></a>results &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">n =</span> <span class="kw">as.factor</span>(<span class="kw">levels</span>(N)),</span>
+<span id="cb2-6"><a href="slutsky.html#cb2-6"></a>                      <span class="dt">X_n =</span> <span class="kw">as.numeric</span>(),</span>
+<span id="cb2-7"><a href="slutsky.html#cb2-7"></a>                      <span class="dt">A_n =</span> <span class="kw">as.numeric</span>(),</span>
+<span id="cb2-8"><a href="slutsky.html#cb2-8"></a>                      <span class="dt">a_plus_X=</span> <span class="kw">as.numeric</span>())</span>
+<span id="cb2-9"><a href="slutsky.html#cb2-9"></a></span>
+<span id="cb2-10"><a href="slutsky.html#cb2-10"></a><span class="cf">for</span> (n <span class="cf">in</span> N) {</span>
+<span id="cb2-11"><a href="slutsky.html#cb2-11"></a>  X_n &lt;-<span class="st"> </span><span class="kw">rnorm</span>(n)</span>
+<span id="cb2-12"><a href="slutsky.html#cb2-12"></a>  A_n &lt;-<span class="st"> </span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">exp</span>(<span class="op">-</span>n)</span>
+<span id="cb2-13"><a href="slutsky.html#cb2-13"></a>  a_plus_X &lt;-<span class="st"> </span>A_n <span class="op">+</span><span class="st"> </span>X_n</span>
+<span id="cb2-14"><a href="slutsky.html#cb2-14"></a>  </span>
+<span id="cb2-15"><a href="slutsky.html#cb2-15"></a>  results &lt;-<span class="st"> </span><span class="kw">rbind</span>(results, <span class="kw">cbind</span>(n, X_n, A_n, a_plus_X))</span>
+<span id="cb2-16"><a href="slutsky.html#cb2-16"></a>  </span>
+<span id="cb2-17"><a href="slutsky.html#cb2-17"></a>}</span>
+<span id="cb2-18"><a href="slutsky.html#cb2-18"></a></span>
+<span id="cb2-19"><a href="slutsky.html#cb2-19"></a><span class="kw">ggplot</span>(results, <span class="kw">aes</span>(<span class="dt">x =</span> a_plus_X)) <span class="op">+</span></span>
+<span id="cb2-20"><a href="slutsky.html#cb2-20"></a><span class="st">  </span><span class="kw">facet_wrap</span>(n<span class="op">~</span>., <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">labeller =</span> <span class="st">&quot;label_both&quot;</span>) <span class="op">+</span></span>
+<span id="cb2-21"><a href="slutsky.html#cb2-21"></a><span class="st">  </span><span class="kw">geom_density</span>() <span class="op">+</span></span>
+<span id="cb2-22"><a href="slutsky.html#cb2-22"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="dv">2</span>, <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span></span>
+<span id="cb2-23"><a href="slutsky.html#cb2-23"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&quot;p(a+X)&quot;</span>, <span class="dt">x=</span><span class="st">&quot;a+X&quot;</span>)</span></code></pre></div>
+<p><img src="10EconometricTheorems_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>As <code>n</code> becomes larger, the resulting distribution becomes approximately normal, with variance of 1 and a mean value centred around <span class="math inline">\(0 + a = 2\)</span>.</p>
+<p>Slutsky’s Theorem is so useful precisely because it allows us to combine multiple random variables with known asymptotics, and retain this knowledge i.e. we know what the resultant distribution will converge to assuming <span class="math inline">\(n \to \infty\)</span>.</p>
+</div>
+<div id="proof-of-slutskys-theorem" class="section level2">
+<h2><span class="header-section-number">5.3</span> Proof of Slutsky’s Theorem</h2>
+<p>Despite the intuitive appeal of Slutsky’s Theorem, the proof is less straightforward. It relies on the continuous mapping theorem (CMT), which in turns rests on several other theorems such as the Portmanteau Theorem. To avoid the rabbit hole of proving all necessary antecedent theorems, I simply introduce and state the continuous mapping theorem (CMT) here, and then show how this can be used to prove Slutsky’s Theorem.</p>
+<div id="cmt" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> CMT</h3>
+<p>The continuous mapping theorem states that if there is some random variable such that <span class="math inline">\(X_n \xrightarrow{d} X\)</span>, then <span class="math inline">\(g(X_n) \xrightarrow{d} g(X)\)</span>, so long as <span class="math inline">\(g\)</span> is a continuous function. In approximate terms (which are adequate for our purpose), a continuous function is one in which for a given domain the function can be represented as an single unbroken curve (or hyperplane in many dimensions). For example, consider the graph of <span class="math inline">\(f(x) = x^{-1}\)</span>. For the domain <span class="math inline">\(D_{+}: \mathbb{R} &gt; 0\)</span>, this function is continuous. But for the domain <span class="math inline">\(D_{\infty}: \mathbb{R}\)</span>, the function is discontinuous because the function is undefined when <span class="math inline">\(x = 0\)</span>.</p>
+<p>In short, CMT states that a continuous function preserves the asymptotic limits of a random variable. More broadly (and again, I do not prove this here), CMT entails that <span class="math inline">\(g(P_n,Q_n,...,Z_n) \xrightarrow{d} g(P,Q,...,Z)\)</span> if all <span class="math inline">\(P_n, Q_n,...\)</span> etc. converge in distribution to <span class="math inline">\(P,Q,...\)</span> respectively.</p>
+</div>
+<div id="proof-using-cmt" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Proof using CMT</h3>
+<p>How does this help prove Slutsky’s Theorem? We know by the definitions in Slutsky’s Theorem that <span class="math inline">\(X_n \xrightarrow{d} X\)</span> and, by a similar logic, we know that <span class="math inline">\(A_n \xrightarrow{d} a\)</span> (since <span class="math inline">\(A_n \xrightarrow{p} a\)</span>, and converging in probability entails converging in distribution). So we can note that the joint vector <span class="math inline">\((X_n, A_n) \xrightarrow{d} (X,a)\)</span>. By CMT, therefore, <span class="math inline">\(g(X_n, A_n) \xrightarrow{d} g(X,a)\)</span>. Hence, any continuous function <span class="math inline">\(g\)</span> will preserve the limits of the respective distributions.</p>
+<p>Given this result, it is sufficient to note that both addition and multiplication are continuous functions. Again, I do not show this here but the continuity of addition and multiplication (both scalar and vector) can be proved mathematically (for example see one such proof <a href="http://mathonline.wikidot.com/continuity-of-addition-scalar-multiplication-and-multiplicat%5D.">here</a> For an intuitive explanation, think about the diagonal line <span class="math inline">\(y=X\)</span> – any multiplication of that line is still a single, uninterrupted line (<span class="math inline">\(y = aX\)</span>) assuming <span class="math inline">\(a\)</span> is a constant. Similarly, adding a constant to the function of a line also yields an uninterrupted line (e.g. <span class="math inline">\(y= X + a\)</span>).</p>
+<p>Hence, CMT guarantees both parts 1 and 2 of the Theorem. <span class="math inline">\(\square\)</span></p>
+</div>
+</div>
+<div id="applications_slutsky" class="section level2">
+<h2><span class="header-section-number">5.4</span> Applications</h2>
+<p>Slutsky’s Theorem is a workhorse theorem that allows researchers to make claims about the limiting distributions of multiple random variables. Instead of being used in applied settings, it typically underpins the modelling strategies used in applied research. For example, <span class="citation">Aronow and Samii (<a href="#ref-aronow_representative2015" role="doc-biblioref">2016</a>)</span> consider the problem of weighting multiple regression when the data sample is unrepresentative of the population of interest. In their proofs, they apply Slutsky’s Theorem at two different points to prove that their weighted regression estimates converge in probability on the weighted expectation of individual treatment effects, and subsequently, that the same coefficient converges in probability to the true average treatment effect in the population.</p>
+<div id="proving-the-consistency-of-sample-variance-and-the-normality-of-the-t-statistic" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Proving the consistency of sample variance, and the normality of the t-statistic</h3>
+<p>In the remainder of this chapter, I consider applications of both Central Mapping Theorem and Slutsky’s Theorem in fundamental statistical proofs. I first show how CMT can be used to prove the consistency of the variance of a random variable, and subsequently how in combination with Slutsky’s Theorem this helps prove the normality of a t-statistic. These examples are developed from <a href="http://personal.psu.edu/drh20/asymp/lectures/asymp.pdf">David Hunter’s notes</a> on asymptotic theory that accompany his Penn State course in large-sample theory.</p>
+<div id="consistency-of-the-sample-variance-estimator" class="section level4">
+<h4><span class="header-section-number">5.4.1.1</span> Consistency of the sample variance estimator</h4>
+<p>First, let us define the sample variance (<span class="math inline">\(s^2_n\)</span>) of a sequence of i.i.d random variables drawn from a distribution <span class="math inline">\(X\)</span> with <span class="math inline">\(\mathbb{E}[X] = \mu\)</span> and <span class="math inline">\(var(X) = \sigma^2\)</span> as:</p>
+<p><span class="math display">\[ s^2_n = \frac{1}{n-1}\sum_{i=1}^n (X_i - \bar{X_n})^2.\]</span></p>
+<p>We can show that the sample variance formula above is a consistent estimator of the true variance <span class="math inline">\(\sigma^2\)</span>. That is, as the sequence of i.i.d. random variables <span class="math inline">\(X_1, X_2,...\)</span> increases in length, the sample variance estimator of that sequence converges in probability to the true variance value <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>We can prove this by redefining <span class="math inline">\(s^2\)</span> as follows:</p>
+<p><span class="math display">\[ s^2_n = \frac{n}{n-1} \left[\frac{1}{n}\sum_{i=1}^n(X_i - \mu)^2 - (\bar{X_n}-\mu)^2 \right], \]</span>
+which clearly simplifies to the conventional definition of <span class="math inline">\(s^2\)</span> as first introduced.</p>
+<p>From here, we can note using WLLN, that <span class="math inline">\((\bar{X_n} - \mu) \xrightarrow{p} 0\)</span>, and hence that <span class="math inline">\((\bar{X_n}-\mu)^2 \xrightarrow{p} 0\)</span>. Note that this term converges in probability to a constant. Moreover, <span class="math inline">\(\frac{1}{n}\sum_{i=1}^n(X_i - \mu)^2 \xrightarrow{p} \mathbb{E}[X_i - \mu] = var(X) = \sigma^2\)</span>, by definition.</p>
+<p>Now let us define an arbitrary continuous function <span class="math inline">\(g(A_n,B_n)\)</span>. We know by CMT that if <span class="math inline">\(A_n \xrightarrow{p} A, B_n \xrightarrow{p} B\)</span> then <span class="math inline">\(g(A_n, B_n) \xrightarrow{p} g(A,B)\)</span>. And hence, using the implications above we know that for any continuous function <span class="math inline">\(g\)</span> that <span class="math inline">\(g(\frac{1}{n}\sum_{i=1}^n(X_i - \mu)^2, (\bar{X_n} - \mu)) \xrightarrow{p} g(\sigma^2,0)\)</span>.</p>
+<p>Since subtraction is a continuous function, we therefore know that:</p>
+<p><span class="math display">\[ \left[\frac{1}{n}\sum_{i=1}^n(X_i - \mu)^2 - (\bar{X_n}-\mu)^2\right] \xrightarrow{p} \left[\sigma^2 - 0\right] = \sigma^2.\]</span></p>
+<p>Separately we can intuitively see that <span class="math inline">\(\frac{n}{n-1} \xrightarrow{p} 1.\)</span> Hence, by applying CMT again to this converging variable multiplied by the converging limit of the above (since multiplication is a continuous function), we can see that:</p>
+<p><span class="math display">\[ s^2_n \xrightarrow{p} 1 \times \sigma^2 = \sigma^2 \;\;\; \square\]</span></p>
+</div>
+<div id="normality-of-the-t-statistic" class="section level4">
+<h4><span class="header-section-number">5.4.1.2</span> Normality of the t-statistic</h4>
+<p>Let’s define a t-statistic as:</p>
+<p><span class="math display">\[ t_n = \frac{\sqrt{n}(\bar{X}_n-\mu)}{\sqrt{\hat{\sigma^2}}}\]</span></p>
+<p>By the Central Limit Theorem (CLT, <a href="wlln.html#wlln">Chapter 5</a>), we know that for a random variable <span class="math inline">\(X\)</span> with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span> that <span class="math inline">\(\sqrt{n}(\bar{X}_n - \mu) \xrightarrow{d} N(0,\sigma^2)\)</span>.</p>
+<p>We also know from the proof above that if <span class="math inline">\(\hat{\sigma}^2 = s^2\)</span> then <span class="math inline">\(\hat{\sigma}^2 \xrightarrow{p} \sigma^2\)</span> – a constant. Given this, we can also note that <span class="math inline">\(\frac{1}{\hat{\sigma^2}} \xrightarrow{p} \frac{1}{\sigma^2}\)</span>.</p>
+<p>Hence, by Slutsky’s Theorem:</p>
+<p><span class="math display">\[\begin{align}
+\sqrt{n}(\bar{X}_n-\mu) \times \frac{1}{\sqrt{\sigma^2}} &amp;\xrightarrow{d} N(0,\sigma^2) \times \frac{1}{\sqrt{\sigma^2}} \\
+&amp;= \sigma N(0,1) \times \frac{1}{\sigma}\\
+&amp;= N(0,1) \;\;\; \square
+\end{align}\]</span></p>
+<p>One brief aspect of this proof that is noteworthy is that since Slutsky’s Theorem rests on the CMT, the application of Slutsky’s Theorem requires that the function of the variables <span class="math inline">\(g\)</span> (in this case multiplication) is continuous and defined for the specified domain. Note that <span class="math inline">\(\frac{1}{0}\)</span> is undefined and therefore that the above proof only holds when we assume <span class="math inline">\(\sigma^2 &gt; 0\)</span>. Hence why in many statistics textbooks and discussions of model asymptotics, authors note that they must assume a positive, non-zero variance.</p>
+
+</div>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-aronow_representative2015">
+<p>Aronow, Peter M., and Cyrus Samii. 2016. “Does Regression Produce Representative Estimates of Causal Effects?” <em>American Journal of Political Science</em> 60 (1): 250–67. <a href="https://doi.org/10.1111/ajps.12185">https://doi.org/10.1111/ajps.12185</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="wlln.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="big-op-and-little-op.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-slutsky.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["10EconometricTheorems.pdf", "10EconometricTheorems.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
