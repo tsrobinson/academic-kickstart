@@ -51,7 +51,7 @@ height = ""
   #   Activate the button by specifying a URL and button label below.
   #   Deactivate by commenting out parameters, prefixing lines with `#`.
   cta_label = "Read"
-  cta_url = "files/_10ET/index.html"
+  cta_url = "https://ts-robinson.com/files/_10ET/index.html"
   cta_icon_pack = "fas"
   cta_icon = "book"
 +++
