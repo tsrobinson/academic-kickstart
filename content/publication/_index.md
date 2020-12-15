@@ -1,5 +1,5 @@
 ---
-title: Research
+title: Publications
 
 # View.
 #   1 = List
@@ -8,7 +8,7 @@ title: Research
 #   4 = Citation
 view: 4
 
-# Optional header image (relative to `static/img/` folder).
+# Optional header image (relative to `static/media/` folder).
 header:
   caption: ""
   image: ""
