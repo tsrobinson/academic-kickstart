@@ -31,6 +31,6 @@ projects: []
 publishDate: '2020-12-15T23:26:39.019403Z'
 publication_types:
 - '3'
-abstract: ''
+abstract: 'Information about how campaigns are financed is abundant in the United States, but we have only scratched the surface of how this information affects voter behavior. How does disclosure affect vote choice and how is this effect mediated by partisan signals? Do the effects of disclosure differ across election types? Using a series of con- joint experiments, I compare the effects of campaigns’ financial profiles on vote choice across direct democratic and representative election types, randomizing subjects’ ex- posure to additional political cues. I find that while disclosure can affect vote choice, these effects are drowned out by partisan signals. In ballot initiative races, explicit pol- icy information also appears to negate any effect of disclosure. This paper is the first to explore the comparative effects of disclosure across election type, contributing to our understanding of how separate heuristics interact in electoral contexts, with important implications for the design of campaign finance regulation.'
 publication: '*Working Paper*'
 ---
