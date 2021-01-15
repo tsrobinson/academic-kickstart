@@ -13,8 +13,6 @@ date: '2020-10-01'
 lastmod: 2020-12-15T23:26:38Z
 featured: false
 draft: false
-url_pdf: 'https://doi.org/10.33774/apsa-2020-3tk40-v3'
-
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
