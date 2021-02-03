@@ -1,16 +1,15 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: 'midas: Efficient Multiple Imputation for Large and Complex Data in Python'
+title: 'Efficient Multiple Imputation for Diverse Data in Python and R: MIDASpy and rMIDAS'
 subtitle: ''
 summary: ''
 authors:
 - Ranjit Lall
-- Alex Stenlake
 - Thomas Robinson
 tags: []
 categories: []
-date: '2020-04-01'
+date: '2021-02-01'
 lastmod: 2020-12-15T23:26:38Z
 featured: false
 draft: false
@@ -32,17 +31,6 @@ projects: []
 publishDate: '2020-12-15T23:26:38.368461Z'
 publication_types:
 - '3'
-abstract: This paper introduces software packages for efficiently imputing missing
-  data using deep learning methods in Python (MIDASpy) and R (rMIDAS). The software
-  implements a recently developed approach to multiple imputation known as MIDAS,
-  which involves introducing an additional portion of missingness into the dataset,
-  attempting to reconstruct this portion with a type of unsupervised neural network
-  known as a denoising autoencoder, and using the resulting model to draw imputations
-  of originally missing values. These steps are executed by a fast, scalable, and
-  flexible algorithm that expands both the quantity and the range of data that can
-  be analyzed with multiple imputation. To help users optimize the algorithm for their
-  specific application, MIDASpy and rMIDAS offer a host of user-friendly tools for
-  calibrating and validating the imputation model. We provide a comprehensive guide
-  to these functionalities and demonstrate their usage on a large real dataset.
+abstract: This paper introduces software packages for efficiently imputing missing data using deep learning methods in Python (MIDASpy) and R (rMIDAS). The packages implement a recently developed approach to multiple imputation known as MIDAS, which involves introducing additional missing values into the dataset, attempting to reconstruct these values with a type of unsupervised neural network known as a denoising autoencoder, and using the resulting model to draw imputations of originally missing data. These steps are executed by a fast and flexible algorithm that expands both the quantity and the range of data that can be analyzed with multiple imputation. To help users optimize the algorithm for their particular application, MIDASpy and rMIDAS offer a host of user-friendly tools for calibrating and validating the imputation model. We provide a detailed guide to these functionalities and demonstrate their usage on a large real dataset.
 publication: '*Working Paper*'
 ---
