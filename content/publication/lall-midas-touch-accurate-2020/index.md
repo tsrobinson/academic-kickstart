@@ -7,7 +7,7 @@ summary: ''
 authors:
 - Ranjit Lall
 - Thomas Robinson
-tags: []
+tags: ["a"]
 categories: []
 date: '2020-10-01'
 lastmod: 2020-12-15T23:26:38Z
@@ -45,6 +45,6 @@ abstract: Principled methods for analyzing missing values, based chiefly on mult
   simulated as well as real social science data, together with an applied example
   involving a large-scale electoral survey, illustrate MIDAS's accuracy and efficiency
   across a range of settings. We provide open-source software for implementing MIDAS.
-publication: '*Political Analysis (Conditional Acceptance)*'
+publication: '*Political Analysis (Accepted)*'
 doi: 10.33774/apsa-2020-3tk40-v3
 ---

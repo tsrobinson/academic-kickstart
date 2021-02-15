@@ -44,5 +44,5 @@ abstract: 'An established finding on ballot design is that prominent positions o
   vote shares. In addition to presenting evidence for how campaigns react strategically
   to election administration, our results provide the first evidence for a new mechanism
   for the ballot-order effects examined in many previous studies.'
-publication: '*Journal of Politics (Conditional Acceptance)*'
+publication: '*Journal of Politics (Accepted)*'
 ---

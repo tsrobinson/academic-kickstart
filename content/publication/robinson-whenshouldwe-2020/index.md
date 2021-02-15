@@ -29,7 +29,7 @@ image:
 projects: []
 publishDate: '2020-12-15T23:26:38.691683Z'
 publication_types:
-- '3'
+- '1'
 abstract: When researchers suspect that error terms are correlated by group in observational
   research the standard correction is to cluster the standard errors. But what about
   in experimental contexts where treatment is randomised? Despite their ubiquity in

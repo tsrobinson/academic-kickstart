@@ -47,7 +47,7 @@ image:
 projects: []
 publishDate: '2021-02-03T10:23:06.767725Z'
 publication_types:
-- '3'
+- '1'
 abstract: 'How does the public want a COVID-19 vaccine to be allocated? We conducted
   a conjoint experiment asking 15,536 adults in 13 countries to evaluate 248,576 profiles
   of potential vaccine recipients that varied randomly on five attributes. Our sample

@@ -30,7 +30,7 @@ image:
 projects: []
 publishDate: '2020-12-15T23:26:38.863368Z'
 publication_types:
-- '3'
+- '1'
 abstract: Policy referendums around the world succeed regularly and on important policy
   areas. But why do these policies pass by direct democracy and not through the legislature?
   In this paper, I address this puzzle by focussing on ballot initiative success in
