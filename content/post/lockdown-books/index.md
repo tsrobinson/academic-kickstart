@@ -4,11 +4,11 @@
 title: "Books from Lockdown"
 subtitle: "My 2020 fiction reading list"
 summary: ""
-authors: [Tom]
+authors: [admin]
 tags: []
 categories: []
-date: 2021-03-05
-lastmod: 2020-03-05
+date: 2021-03-05T08:00:00Z
+lastmod: 2021-03-05T08:00:00Z
 featured: false
 draft: false
 
@@ -27,7 +27,6 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
-
 I hesitate to say that the first lockdown gave me *more* time to read but the slower pace of weekends, and fewer alternatives, meant I was able to get through more fiction books than normal.
 
 Throughout last year I kept a note of these books, in part to track what I'd read, but also to see if I could learn anything about what makes a book good *for me*. To keep things interesting, I tried to read a mix of the different genres I enjoy -- from the ['New Vanguard'](https://www.nytimes.com/2018/03/05/books/vanguard-books-by-women-in-21st-century.html) of women writers to historical and science fiction. 
@@ -39,7 +38,7 @@ Given the second (third?) lockdown currently ongoing in 2021, I will write a new
 ---
 
 **The Western Wind, Samantha Harvey -- 3/5**
-Interesting world and main character, but the plot was a little uninspired. The revelations at the end of what was essentially a dark ages whodunnit were underwhelming nor did they feel 100% coherent. The book did capture the day-to-day rigmarole of life at that time quite well, and the relationship between the priest and his parishioners was interesting.
+Interesting world and main character, but the plot was a little uninspired. The revelations at the end of what was essentially a dark ages whodunnit were underwhelming nor did they feel 100 percent coherent. The book did capture the day-to-day rigmarole of life at that time quite well, and the relationship between the priest and his parishioners was interesting.
 
 **Exhalation, Ted Chiang -- 4/5**
 Some really excellent, immersive short stories (the opening story about one-way time-traveling windows, another about sentient digital pets), some that were good but not amazing (an archaeological story about Creationism), and others that missed the mark (about a mechanical nurse). The collection was an interesting read, and it was the first time I've read a curated set of short stories, but I wasn’t blown away.
@@ -76,6 +75,3 @@ The tone is grim throughout, like the churn of the canal, and it was tiring (in 
 
 **A Drop of Patience, William Melvin Kelley -- 5/5**
 A more straightforward, linear story than *A Different Drummer* but I still found it very powerful. Some of the same ideas come through here -- whether blacks should cater for whites (in this case as consumers of music), the awkwardness of liberal whites, and what drives people's ambitions. I found Ludlow a compelling character -- he is really flawed, and Kelley cleverly distinguishes between the character's genuine inner monologue and his speech as a way of highlighting these imperfections.
-
----
-
