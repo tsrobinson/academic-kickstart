@@ -61,7 +61,7 @@ abstract: 'How does the public want a COVID-19 vaccine to be allocated? We condu
   be mandatory. There is a consensus among the public on many aspects of COVID-19
   vaccination which needs to be taken into account when developing and communicating
   roll-out strategies.'
-publication: '*medRxiv*'
+publication: '*medRxiv, Revise and Resubmit, Proceedings of Proceedings of the National Academy of Sciences*'
 url_pdf: https://www.medrxiv.org/content/early/2021/02/02/2021.01.31.21250866
 doi: 10.1101/2021.01.31.21250866
 ---
