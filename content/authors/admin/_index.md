@@ -14,7 +14,7 @@ role: Assistant Professor in Quantitative Comparative Politics
 
 # Organizations/Affiliations
 organizations:
-- name: School of Governance and International Affairs, Durham University
+- name: School of Government and International Affairs, Durham University
   url: "https://www.dur.ac.uk/sgia/"
 # - name: Department of Politics, University of Oxford
 #  url: "https://www.politics.ox.ac.uk/"
