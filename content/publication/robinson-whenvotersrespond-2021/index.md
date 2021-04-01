@@ -31,6 +31,6 @@ projects: []
 publishDate: '2020-12-15T23:26:39.019403Z'
 publication_types:
 - '1'
-abstract: 'hello'
+abstract: 'Campaign finance information is abundant in the United States, but we have only scratched the surface of how this information affects voter behaviour. We know comparatively little about how  financial information affects vote choice specifically, whether effects differ across types of election, and how robust any effects are to other relevant political signals. Using a series of conjoint experiments, I compare the effects of campaigns' financial profiles on vote choice across direct democratic and representative elections, randomizing subjects' exposure to additional political cues. I find that while the financial profile of candidates can affect vote choice, these effects are drowned out by non-financial signals. In ballot initiative races, the explicit policy focus of the election appears to swamp any effect of financial information. This paper is the first to explore the comparative effects of financial disclosure across election type, contributing to our understanding of how different heuristics interact in electoral contexts.'
 publication: '*Working Paper*'
 ---
