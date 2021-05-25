@@ -1,28 +1,27 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Heterogeneity  analysis  of  marginal  effects  in  conjoint  experiments"
+title: "How to detect heterogeneity in conjoint experiments"
 authors:
  - Thomas Robinson
  - Raymond Duch
- - Philip Clarke
-date: 2021-02-15T12:00:31Z
+date: 2021-05-24T12:00:31Z
 doi: ""
 
 # Schedule page publish date (NOT publication's date).
-publishDate: 2021-02-15T12:00:31Z
+publishDate: 2021-05-24T12:00:31Z
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
 # 7 = Thesis; 8 = Patent
-publication_types: ["0"]
+publication_types: [1]
 
 # Publication name and optional abbreviated publication name.
-publication: "*Work in progress*"
+publication: "*Working Paper*"
 publication_short: ""
 
-abstract: "Conjoint experiments are fast becoming one of the dominant experimental methods within the social sciences. To date our methods of estimating effect heterogeneity within these designs is limited, despite clear benefits to researchers across a wide gamut of different research areas. We approach this problem from a potential outcomes perspective, demonstrating two natural extensions to the estimated parameters in conjoint experiments: the observation-level and individual-level marginal component effects. To recover these quantities, we propose a new estimation strategy and show how it can be used to evaluate treatment effect heterogeneity. Our proposed method exhibits good statistical properties, and we find interesting heterogeneity when re-estimating existing conjoint studies. To accompany this paper, we provide new a R package, **cjbart**, that allows researchers to model heterogeneity in their experimental conjoint data."
+abstract: "Conjoint experiments are fast becoming one of the dominant experimental methods within the social sciences. Despite several scholars advancing novel ways to model heterogeneity within this type of design, the relationship between these new quantities and the conjoint design is underdeveloped. In this note, we clarify how conjoint heterogeneity can be construed as a set of nested, causal parameters that correspond to the levels of the conjoint design. We then use this framework to propose a new estimation strategy that allows researchers to evaluate treatment effect heterogeneity and which exhibits good statistical properties. Replicating two conjoint experiments, we first demonstrate our theoretical argument, and then show how this method helps uncover interesting heterogeneity. To accompany this paper, we provide new a R package, **cjbart**, that allows researchers to model heterogeneity in their experimental conjoint data."
 
 # Summary. An optional shortened abstract.
 summary: ""
