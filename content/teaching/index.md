@@ -14,13 +14,15 @@ header:
   image: ""
 ---
 
-## Academic Year (2020-21)
+## Academic Year (2021-22)
 
-In the upcoming academic year, I will be teaching undergraduate and postgraduate courses in research design, methodology, and statistics.
+In the upcoming academic year, I will be teaching undergraduate and postgraduate courses in comparative politics, statistics, and research design.
 
 ## Methods Schools
 
-* [Machine Learning](https://www.politics.ox.ac.uk/spring-school/course-outline.html?schoolid=517) -- **Oxford Spring School in Advanced Research Methods** -- 5 x 3 hour course introducing the fundamentals of machine learning in a social science setting, to be taught at the Oxford Spring School in Advanced Research Methods 2021
+* [Machine Learning](https://www.politics.ox.ac.uk/spring-school/course-outline.html?schoolid=517) -- **Oxford Spring School in Advanced Research Methods 2021** -- 5 x 3 hour course introducing the fundamentals of machine learning in a social science setting, including maximumum likelihood estimation and gradient descent, LASSO, tree-based methods, neural networks, and ensemble learning.
+
+* [Machine Learning](\href{https://sicss.io/2021/oxford/) -- **Summer Institute in Computational Social Science 2021, Nuffield College** -- 3 hour introductory workshop to machine learning and its application to applied social science research
 
 * [R for Reproducible Research](https://github.com/tsrobinson/r_for_reproducible_research/) -- 2 x 2 hour course in coding best practices using R, taught at the Oxford Spring School in Advanced Research Methods 2019
 

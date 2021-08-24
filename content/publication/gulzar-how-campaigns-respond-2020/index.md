@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: 'How Campaigns Respond to Ballot Position: A New Mechanism for Order Eﬀects'
+title: 'How Campaigns Respond to Ballot Position: A New Mechanism for Order Effects'
 subtitle: ''
 summary: ''
 authors:

@@ -22,12 +22,13 @@ organizations:
   url: "https://cess-nuffield.nuff.ox.ac.uk/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: I am a political scientist studying representation, experimental methods and computational social science.
+bio: I am a political scientist studying representation, money in politics, and experimental/computational social science.
 
 interests:
-- Representation, Policymaking, Campaign Finance
+- Representation and policymaking
+- Money in politics
 - Experiments
-- Computational social science
+- Machine learning
 
 education:
   courses:
@@ -78,9 +79,9 @@ email: ""
 # - Visitors
 ---
 
-I am an Assistant Professor in Quantitative Comparative Politics at the [School of Government and International Affairs](https://www.dur.ac.uk/sgia/), Durham University. I am also affiliated with the [Centre for Experimental Social Science (CESS)](https://cess-nuffield.nuff.ox.ac.uk/) at Nuffield College, University of Oxford.
+I am an Assistant Professor in Quantitative Comparative Politics at the [School of Government and International Affairs](https://www.dur.ac.uk/sgia/), Durham University. I am also affiliated with the [Centre for Experimental Social Science (CESS)](https://cess-nuffield.nuff.ox.ac.uk/) at Nuffield College, University of Oxford, and am currently a [research collaborator](https://research.fb.com/) onsite with Facebook's Statistics and Privacy team.
 
-My research interests surround representation, direct democracy and campaign finance, as well as issues within experimental methodology and computational social science.
+My research interests surround money in politics, democratic representation and voter behaviour, as well as methodological issues within experimental and computational social science. 
 
 I successfully defended my DPhil in Politics at the [University of Oxford](http://www.ox.ac.uk) in July 2020. During my graduate studies I held a joint ESRC-Wadham RCUK studentship, and was a Quantitative Methods scholar at the [Department of Politics and International Relations](https://www.politics.ox.ac.uk/), University of Oxford.
 

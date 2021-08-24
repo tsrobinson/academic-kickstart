@@ -32,5 +32,5 @@ publishDate: '2020-12-15T23:26:38.368461Z'
 publication_types:
 - '1'
 abstract: This paper introduces software packages for efficiently imputing missing data using deep learning methods in Python (MIDASpy) and R (rMIDAS). The packages implement a recently developed approach to multiple imputation known as MIDAS, which involves introducing additional missing values into the dataset, attempting to reconstruct these values with a type of unsupervised neural network known as a denoising autoencoder, and using the resulting model to draw imputations of originally missing data. These steps are executed by a fast and flexible algorithm that expands both the quantity and the range of data that can be analyzed with multiple imputation. To help users optimize the algorithm for their particular application, MIDASpy and rMIDAS offer a host of user-friendly tools for calibrating and validating the imputation model. We provide a detailed guide to these functionalities and demonstrate their usage on a large real dataset.
-publication: '*Working Paper*'
+publication: '*Under Review*'
 ---

@@ -1,32 +1,31 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: Who should be first in line for the COVID-19 vaccine? Surveys in 13 countries
-  of the publics preferences for prioritisation
+title: Citizens from 13 countries share similar preferences for COVID-19 vaccine allocation priorities
 subtitle: ''
 summary: ''
 authors:
-- Raymond Duch
-- Laurence S J Roope
-- Mara Violato
-- Matias F Becerra
-- Thomas Robinson
-- Jean-Francois Bonnefon
-- Jorge Friedman
-- Peter Loewen
-- Pavan Mamidi
-- Alessia Melegaro
-- Mariana Blanco
-- Juan Vargas
-- Julia Seither
-- Paolo Candio
-- Ana G Cruz
-- Xinyang Hua
-- Adrian Barnett
-- Philip Clarke
+- Raymond Duch et al
+#- Laurence S J Roope
+#- Mara Violato
+#- Matias F Becerra
+#- Thomas Robinson
+#- Jean-Francois Bonnefon
+#- Jorge Friedman
+#- Peter Loewen
+#- Pavan Mamidi
+#- Alessia Melegaro
+#- Mariana Blanco
+#- Juan Vargas
+#- Julia Seither
+#- Paolo Candio
+#- Ana G Cruz
+#- Xinyang Hua
+#- Adrian Barnett
+#- Philip Clarke
 tags: []
 categories: []
-date: '2021-01-01'
+date: '2021-07-27'
 lastmod: 2021-02-03T10:23:17Z
 featured: false
 draft: false
@@ -47,7 +46,7 @@ image:
 projects: []
 publishDate: '2021-02-03T10:23:06.767725Z'
 publication_types:
-- '1'
+- '2'
 abstract: 'How does the public want a COVID-19 vaccine to be allocated? We conducted
   a conjoint experiment asking 15,536 adults in 13 countries to evaluate 248,576 profiles
   of potential vaccine recipients that varied randomly on five attributes. Our sample
@@ -61,7 +60,7 @@ abstract: 'How does the public want a COVID-19 vaccine to be allocated? We condu
   be mandatory. There is a consensus among the public on many aspects of COVID-19
   vaccination which needs to be taken into account when developing and communicating
   roll-out strategies.'
-publication: '*medRxiv, Revise and Resubmit, Proceedings of Proceedings of the National Academy of Sciences*'
+publication: '*Proceedings of Proceedings of the National Academy of Sciences (Accepted)*'
 url_pdf: https://www.medrxiv.org/content/early/2021/02/02/2021.01.31.21250866
 doi: 10.1101/2021.01.31.21250866
 ---
