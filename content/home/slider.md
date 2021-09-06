@@ -50,7 +50,7 @@ height = "300px"
   #   Activate the button by specifying a URL and button label below.
   #   Deactivate by commenting out parameters, prefixing lines with `#`.
   cta_label = "Read"
-  cta_url = "https://bookdown.org/ts_robinson1994/10_fundamental_theorems_for_econometrics/vtDma6bZJ/"
+  cta_url = "https://bookdown.org/ts_robinson1994/10EconometricTheorems/"
   cta_icon_pack = "fas"
   cta_icon = "book"
 +++
