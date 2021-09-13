@@ -48,7 +48,7 @@ local_business_type = ""
 org_name = ""
 
 # Description for social sharing and search engines. If undefined, superuser role is used in place.
-description = "Personal website of Thomas Robinson, political scientist"
+description = "Personal website of Thomas Samuel Robinson, political scientist"
 
 ############################
 ## Site Features
@@ -107,7 +107,7 @@ directions = ""
 office_hours = ["Term time: Monday/Tuesdays 09:00 to 10:00"]
 
 # Enter an optional link for booking appointments (e.g. calendly.com).
-appointment_url = "https://doodle.com/poll/byefvcnwgmuv2q8h"
+appointment_url = "https://calendly.com/tsr-book/office-hours"
 
 # Contact links
 #   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.
