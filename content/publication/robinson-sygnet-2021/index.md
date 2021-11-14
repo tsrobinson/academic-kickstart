@@ -1,28 +1,26 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Economic Preferences and the Local Coronavirus Pandemic"
+title: "Synthetic data in the social sciences using generative adversarial networks"
 authors:
-- Raymond Duch
-- Peiran Jiao
 - Thomas Robinson
-date: 2021-02-11T11:27:55Z
+date: 2021-02-15T12:00:20Z
 doi: ""
 
 # Schedule page publish date (NOT publication's date).
-publishDate: 2021-02-15T11:27:55Z
+publishDate: 2021-02-15T12:00:20Z
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
 # 7 = Thesis; 8 = Patent
-publication_types: ["1"]
+publication_types: ["0"]
 
 # Publication name and optional abbreviated publication name.
-publication: "*Working paper*"
+publication: "*Work in progress*"
 publication_short: ""
 
-abstract: "Early in the pandemic, individuals in numerous countries experienced quite different rates of COVID-19 infections and deaths dependent on where they lived. This within-country variation offers an opportunity to study how the intensity of a catastrophic shock to systems affects individuals' economic preferences -- a topic without consensus in the literature. In April 2020, we conducted an online survey with approximately 1500 subjects in China, 800 in Chile, and 800 in Italy.  Our sampling strategy deliberately sampled subjects with exposure to different levels of local COVID-19 infections. We find that respondents condition their behavior and economic preferences on this intensity -- levels of COVID-19 preventive behavior are correlated with the intensity of community infections; exposure to intense infection rates correlates, positively, with risk aversion and patience; and, negatively, with other-regarding preferences. Using machine-learning to estimate individual-level effects, we find notable effect heterogeneity with respect to education levels. Finally, using multilevel regression and poststratification (MRP) we demonstrate province-level estimates of economic preferences for 107 Italian provinces."
+abstract: "Data across the social sciences is incredibly complex. Novel experimental and statistical designs are continually being developed to make robust inferences, but often the simulations and data used to test these methods either fail to reflect the complexity of the social system or offer little way of knowing what `correct' inference should look like. This project aims to solve this fundamental issue by using generative adversarial networks, a cutting-edge form of deep learning, to build synthetic datasets that mirror realistic data generating processes while also having discoverable population parameters. This project will define and develop a set of practical principles, as well as open-source software, to generate synthetic data for use in a variety of social science contexts. This new way of simulating social science data has wide applicability to a range of issues including experimental power calculations and the testing of new statistical methods."
 
 # Summary. An optional shortened abstract.
 summary: ""
@@ -39,7 +37,7 @@ featured: false
 #   icon_pack: fab
 #   icon: twitter
 
-url_pdf: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3948756
+url_pdf:
 url_code:
 url_dataset:
 url_poster:
