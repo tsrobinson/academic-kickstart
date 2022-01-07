@@ -79,7 +79,7 @@ email: ""
 # - Visitors
 ---
 
-I am an Assistant Professor in Quantitative Comparative Politics at the [School of Government and International Affairs](https://www.dur.ac.uk/sgia/), Durham University. I am also currently a [research collaborator](https://research.fb.com/) onsite with Facebook's Statistics and Privacy team.
+I am an Assistant Professor in Quantitative Comparative Politics at the [School of Government and International Affairs](https://www.dur.ac.uk/sgia/), Durham University. I am also currently a [research collaborator](https://research.fb.com/) onsite with Meta's Statistics and Privacy team.
 
 My research interests surround money in politics, democratic representation and voter behaviour, as well as methodological issues within experimental and computational social science. 
 

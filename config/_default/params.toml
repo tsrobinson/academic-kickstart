@@ -104,10 +104,10 @@ directions = ""
 
 # Office hours
 # A list of your office hours. To remove, set to an empty list `[]`.
-office_hours = ["Michaelmas: Thursdays 11:30 to 12:30, Fridays 09:00-10:00"]
+office_hours = ["Epiphany Term: Tues/Thurs 09:00-10:00"]
 
 # Enter an optional link for booking appointments (e.g. calendly.com).
-appointment_url = "https://calendly.com/tsr-book/office-hours"
+appointment_url = "https://outlook.office365.com/owa/calendar/OfficeHours5@durhamuniversity.onmicrosoft.com/bookings/"
 
 # Contact links
 #   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.

@@ -9,10 +9,11 @@ authors:
 - Thomas Robinson
 tags: []
 categories: []
-date: '2021-10-05'
-lastmod: 2021-10-05T16:50:00Z
+date: '2022-01-07'
+lastmod: 2022-01-07T17:50:00Z
 featured: false
 draft: false
+
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
@@ -28,10 +29,11 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2020-12-15T23:26:39.019403Z'
+publishDate: '2022-01-07T17:26:39.019403Z'
 publication_types:
-- '1'
-abstract: >
-  In recent American elections political candidates have actively emphasized features of their fundraising profiles when campaigning. Yet, surprisingly, we know comparatively little about how  financial information affects vote choice specifically, whether effects differ across types of election, and how robust any effects are to other relevant political signals. Using a series of conjoint experiment designs, I compare the effects of campaigns' financial profiles on vote choice across direct democratic and representative elections, randomizing subjects' exposure to additional political cues. I find that while the financial profile of candidates can affect vote choice, these effects are drowned out by non-financial signals. In ballot initiative races, the explicit policy focus of the election appears to swamp any effect of financial information. This paper is the first to explore the comparative effects of financial disclosure across election type, contributing to our understanding of how different heuristics interact across electoral contexts.
-publication: '*Revise and Resubmit at Political Behavior*'
+- '2'
+abstract: "In recent American elections political candidates have actively emphasized features of their fundraising profiles when campaigning. Yet, surprisingly, we know comparatively little about how  financial information affects vote choice specifically, whether effects differ across types of election, and how robust any effects are to other relevant political signals. Using a series of conjoint experiment designs, I compare the effects of campaigns' financial profiles on vote choice across direct democratic and representative elections, randomizing subjects' exposure to additional political cues. I find that while the financial profile of candidates can affect vote choice, these effects are drowned out by non-financial signals. In ballot initiative races, the explicit policy focus of the election appears to swamp any effect of financial information. This paper is the first to explore the comparative effects of financial disclosure across election type, contributing to our understanding of how different heuristics interact across electoral contexts."
+publication: '*Political Behavior*'
+doi: 10.1007/s11109-021-09766-y
+url_pdf: 'https://doi.org/10.1007/s11109-021-09766-y'
 ---
